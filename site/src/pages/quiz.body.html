@@ -1,0 +1,27 @@
+<!-- meta
+title: Find your program | Restore Vitality Health
+description: Two short questions point you to the Restore Vitality Health program that fits. Nothing you choose is saved or sent.
+-->
+{#- Both menopause answers that lean one way land on the one Menopause care result: the deck gives one paragraph
+    for it, and the Women's health page shows the hormone and non-hormonal options side by side. -#}
+{%- set T = {
+  'title': 'Find your **program**',
+  'line': 'Two short questions. Nothing you choose is saved or sent: this only points you to the right program, and a licensed provider makes the medical decisions.',
+  'start': 'Start', 'back': 'Back', 'restart': 'Start again',
+  'questions': [
+    {'id': 'q1', 'progress': '.5', 'label': 'Question 1 of 2', 'title': 'What would you **like help with?**',
+     'answers': [['Erectile dysfunction', 'r-ed'], ['Menopause symptoms', 'q2-meno'], ['Weight', 'q2-weight'], ['Energy and healthy aging', 'r-longevity'], ['I am not sure yet', 'r-unsure']]},
+    {'id': 'q2-meno', 'progress': '1', 'label': 'Question 2 of 2', 'title': 'Would you consider **hormone therapy?**',
+     'answers': [['Yes, hormone therapy', 'r-meno'], ['I would rather avoid hormones', 'r-meno'], ['Not sure, I would like advice', 'r-meno']]},
+    {'id': 'q2-weight', 'progress': '1', 'label': 'Question 2 of 2', 'title': 'What pace **suits you?**',
+     'answers': [['A full program, with my provider setting the dose', 'r-weight'], ['A lower dose, for steady and gentle progress', 'r-micro'], ['Not sure, I would like advice', 'r-weight']]}],
+  'results': [
+    {'id': 'r-ed', 'name': 'Erectile **dysfunction**', 'price': 'From $96 per 4 weeks.', 'text': 'Seven treatments, as tablets or liposomal vials, with one to four actives. Your provider reviews your history and suggests the one that fits.', 'cta': 'See the treatments', 'href': 'mens-health.html', 'link': None},
+    {'id': 'r-meno', 'name': 'Menopause **care**', 'price': '$237 per 12 weeks.', 'text': 'Estradiol as a cream, patch or tablet with progesterone, or a non-hormonal tablet. Your provider helps you choose.', 'cta': 'See the treatments', 'href': 'womens-health.html', 'link': None},
+    {'id': 'r-weight', 'name': 'Medical **weight** loss', 'price': 'From $249 per 4 weeks.', 'text': 'Semaglutide as a daily tablet or weekly injection, or tirzepatide as a weekly injection, with your dose set by your provider.', 'cta': 'See the treatments', 'href': 'shared-treatments.html#group-weight', 'link': None},
+    {'id': 'r-micro', 'name': 'GLP-1 **microdosing**', 'price': '$179 per 4 weeks.', 'text': 'A lower weekly dose of semaglutide or tirzepatide, for steady and gentle progress.', 'cta': 'See the treatments', 'href': 'shared-treatments.html#group-micro', 'link': None},
+    {'id': 'r-longevity', 'name': '**Longevity**', 'price': 'From $145 per 4 weeks.', 'text': 'NAD+ as an injection, nasal spray or liposomal, sermorelin, or a weekly B12 injection, for energy, focus and recovery.', 'cta': 'See the treatments', 'href': 'shared-treatments.html#group-longevity', 'link': None},
+    {'id': 'r-unsure', 'name': 'Not sure **yet**', 'price': '', 'text': 'That is fine. Browse every program and price in one place, or ask us and we will point you in the right direction.', 'cta': 'See all prices', 'href': 'pricing.html', 'link': ['Contact us', 'contact.html']}],
+  'note': 'A licensed provider makes the final decision after your consult.'
+} %}
+{% include "partials/page-quiz.html" %}

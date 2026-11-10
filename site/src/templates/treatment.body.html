@@ -1,0 +1,86 @@
+{% from "partials/macros.html" import lit_tile, step_media, photo_cell, hx with context %}
+{#- Treatment page template (spec 2b, The Protocole PDP). One page per product in data/products.json, in both
+    languages; copy from the deck's Treatment data and Treatment detail template sections. -#}
+{%- set es = L == 'es' -%}
+{%- set pool = by_cat(p.category) -%}
+{%- set prog = pool|selectattr('program', 'equalto', p.program)|list -%}
+{%- set pool = prog if prog|length >= 4 else pool -%}
+{%- set idx = pool.index(p) -%}
+{%- set others = [] -%}
+{%- for i in range(1, pool|length) %}{% if others|length < 3 %}{% set _ = others.append(pool[(idx + i) % pool|length]) %}{% endif %}{% endfor -%}
+<div class="t-treatment">
+
+<!-- ===== Treatment: media and info column ===== -->
+{#- critic round 3: the sides alternate. Women's pages put the product on the right; the benefits photo always sits on
+    the side opposite the product, so no two bands in a row share a composition -#}
+<section class="o-product{{ ' -flip' if p.category == 'womens' }}" aria-labelledby="page-title">
+  <div class="o-product__media" aria-hidden="true">
+    {#- sizes: the tile is taller than 4:5, so the photo covers it by height (608x1033 at 1440 needs 826px of
+        width); 60vw makes the browser pick the 1200 file there. Was 44vw, which picked 800 (shown at 1.03x). -#}
+    {{ lit_tile(p, 'o-product__art', big=True, sizes='(min-width: 1025px) 60vw, 100vw') }}
+  </div>
+  <div class="o-product__info">
+    {%- set nm = p.name.split(' (', 1) %}
+    <h1 class="o-product__title" id="page-title">{{ hx(nm[0]) }}{% if nm|length > 1 %} ({{ nm[1] }}{% endif %}</h1>
+    <ul class="o-product__chips">
+      {%- for c in t.chips %}
+      <li class="a-chip -meta">{{ c }}</li>
+      {%- endfor %}
+    </ul>
+    <p class="o-product__price"><span class="o-product__amount">{{ t.price }}</span> <span class="o-product__period">{{ t.period }}</span></p>
+    <p class="o-product__text">{{ t.page }}</p>
+    <div class="o-product__cta" data-sticky-stop>{{ button('Iniciar su consulta' if es else 'Start your consult', p.intake, ext=True, cls='-block') }}</div>
+    <p class="o-product__note">{{ 'Solo se le cobra al completar su formulario, y se le reembolsa el total si un profesional determina que el tratamiento no es adecuado para usted.' if es else 'You are charged only when you complete your intake, and refunded in full if a provider finds the treatment is not right for you.' }}</p>
+    {{ safety() }}
+    <p class="o-product__appearance">{{ S.disclaimer[1] }}</p>
+    <div class="o-product__ingredients">
+      <p class="o-product__ingLabel">{{ 'Ingredientes' if es else 'Ingredients' }}</p>
+      <ul class="o-product__ingList">
+        {%- for i in t.ingredients %}
+        <li>{{ i }}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Treatment: benefits ===== -->
+{#- site standard 5 and 12: cream between the plum-deep product top and the plum safety band, so two dark bands never
+    meet; the program's faceless people photo pairs with the copy here (o-who -withPhoto), out of the product band -#}
+<section class="o-band -light o-benefits{{ ' -withPhoto' if product_art.photo is defined }}{{ ' -photoRight' if p.category != 'womens' }}" aria-labelledby="benefits-title" data-header-theme="light">
+  {{ photo_cell('people-' ~ p.category ~ '-treat', 'm-photoCell o-benefits__photo', '(min-width: 1025px) 38vw, (min-width: 641px) 60vw, calc(100vw - 32px)') }}
+  <div class="o-benefits__copy">
+    {{ intro('benefits-title', 'Para qué **sirve**' if es else 'What it **is for**', None, cls='-start') }}
+    <ul class="o-benefits__list">
+      {%- for b in t.benefits %}
+      <li class="o-benefits__item">{{ b }}</li>
+      {%- endfor %}
+    </ul>
+    <p class="o-benefits__note">{{ 'Los resultados no están garantizados y varían según la persona.' if es else 'Results are not guaranteed and vary from person to person.' }}</p>
+  </div>
+</section>
+
+<!-- ===== Treatment: safety information ===== -->
+{#- the homepage's intro(): heading centred over its lead, so it never reads as a second copy of the FAQ split after it -#}
+<section class="o-band -plum o-safety" aria-labelledby="safety-title">
+  {{ intro('safety-title', 'Información **de seguridad**' if es else 'Safety **information**', 'Este es un medicamento compuesto. Los medicamentos compuestos no están aprobados por la FDA, y la FDA no evalúa su seguridad, eficacia ni calidad. Los preparan farmacias con licencia que deben cumplir normas de calidad estatales y federales. Cómo tomarlo, y a qué estar atento, se explica en la información de seguridad de los medicamentos.' if es else 'This is a compounded medication. Compounded drug products are not FDA-approved, and the FDA does not evaluate them for safety, effectiveness or quality. They are prepared by licensed pharmacies that must meet state and federal quality standards. How to take it, and what to watch for, is set out in the medications safety information.', cls='-flush') }}
+  <p class="o-safety__link">{{ text_link('Leer la información de seguridad completa' if es else 'Read the full medications safety information', 'medications-safety-information.html') }}</p>
+</section>
+
+<!-- ===== Treatment: FAQ (the category page's) ===== -->
+{{ faq('product-faq', category_faq_heading(p.category), [['', category_faq(p.category)]]) }}
+
+<!-- ===== Treatment: you may also consider ===== -->
+<section class="o-band -plum o-consider" aria-labelledby="consider-title">
+  {{ intro('consider-title', 'También **le puede interesar**' if es else 'You may **also consider**', None) }}
+  <div class="o-cardGrid">
+    {%- for o in others %}
+    {{ card(o, 'h3', '(min-width: 1025px) 30vw, (min-width: 641px) 46vw, calc(100vw - 32px)') }}
+    {%- endfor %}
+  </div>
+</section>
+
+<!-- ===== Closing CTA band (product) ===== -->
+{{ closing(S.closing_title, 'Inicie su consulta en línea. Un profesional con licencia se encarga del resto.' if es else 'Start your consult online. A licensed provider takes it from there.', 'Iniciar su consulta' if es else 'Start your consult', p.intake, ext=True, photo='band-closing-' ~ p.category) }}
+
+</div>

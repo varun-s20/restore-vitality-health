@@ -1,0 +1,82 @@
+{#- Quiz page (spec 2b, site standard 10 Nov): one question per screen, records nothing. The page source sets T.
+    Critic fix pass (10 Nov): the utility banner holds the title and line; the start screen pairs a faceless photo
+    with the start pill and the three program rows. Question screens keep the question beside its answer rows.
+    The result names the program beside its people photo (4:5, faceless picks seen from behind; no face sits beside
+    an ED or menopause price). Without JS the quiz stays hidden and the three program pages are listed instead.
+    Hooks for global.js (data-quiz*, data-go) are unchanged. -#}
+{% from "partials/macros.html" import photo_cell with context %}
+{%- set RESULT_PHOTO = {'r-ed': 'quiz-mens', 'r-meno': 'quiz-womens', 'r-weight': 'quiz-shared', 'r-micro': 'quiz-shared', 'r-longevity': 'quiz-shared', 'r-unsure': 'quiz-unsure'} -%}
+<div class="t-quiz">
+{#- the utility banner (cream, no photo) holds the h1; it shows with the start screen only. Critic round 3: the line
+    moves down beside the photo, above Start, so the start column opens with words instead of empty space -#}
+{{ banner(T.title, None, 'quiz', kind='text') }}
+<div class="o-quiz__progress" aria-hidden="true"><div class="o-quiz__bar" data-quiz-bar></div></div>
+<section class="o-quiz" aria-labelledby="page-title" data-header-theme="light">
+  <div class="o-quiz__col">
+
+    <div class="o-quiz__noscript o-quiz__begin" data-quiz-noscript>
+      <p class="o-quiz__intro">{{ T.line }}</p>
+      <ul class="o-quiz__routes">
+        {%- for href, label in S.nav_menu[:3] %}
+        <li><a class="o-quiz__answer" href="{{ href }}">{{ label }}<svg class="a-svg" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+        {%- endfor %}
+      </ul>
+    </div>
+
+    <div class="o-quiz__app" data-quiz hidden>
+      <!-- intro: on plum-deep (so the cream banner never meets a cream band): the start pill, then the three programs as the quiz band's route rows, beside a faceless photo -->
+      <div class="o-quiz__screen o-quiz__begin" data-quiz-screen="intro" data-progress="0">
+        {{ photo_cell('quiz-start', 'm-photoCell o-quiz__beginPhoto', '(min-width: 1025px) 34vw, (min-width: 641px) 60vw, calc(100vw - 32px)') }}
+        <div class="o-quiz__beginCopy">
+          <p class="o-quiz__intro">{{ T.line }}</p>
+          <button class="a-button -gold o-quiz__go o-quiz__start" type="button" data-go="q1"><span class="a-button__label">{{ T.start }}</span><svg class="a-svg a-button__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <ul class="o-quiz__routes">
+            {%- for href, label in S.nav_menu[:3] %}
+            <li><a class="o-quiz__answer" href="{{ href }}">{{ label }}<svg class="a-svg" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+            {%- endfor %}
+          </ul>
+        </div>
+      </div>
+
+      {%- for q in T.questions %}
+      <div class="o-quiz__screen o-quiz__split" data-quiz-screen="{{ q.id }}" data-progress="{{ q.progress }}" hidden>
+        <div class="o-quiz__lead">
+          <p class="sr-only">{{ q.label }}</p>
+          <h2 class="o-quiz__title -question">{{ q.title|hl }}</h2>
+        </div>
+        <div class="o-quiz__main">
+          <div class="o-quiz__answers">
+            {%- for label, go in q.answers %}
+            <button class="o-quiz__answer" type="button" data-go="{{ go }}">{{ label }}<svg class="a-svg" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            {%- endfor %}
+          </div>
+          <div class="o-quiz__nav"><button class="a-textLink" type="button" data-quiz-back>{{ T.back }}</button></div>
+        </div>
+      </div>
+      {%- endfor %}
+
+      {%- for r in T.results %}
+      <div class="o-quiz__screen o-quiz__split -result" data-quiz-screen="{{ r.id }}" data-progress="1" hidden>
+        <div class="o-quiz__main o-quiz__result">
+          <h2 class="o-quiz__title -result">{{ r.name|hl }}</h2>
+          {%- if r.price %}<p class="o-quiz__resultPrice">{{ r.price }}</p>{% endif %}
+          <p class="o-quiz__resultText">{{ r.text }}</p>
+          <div class="o-quiz__resultActions">
+            {{ button(r.cta, r.href, '-plum') }}
+            {%- if r.link %}
+            {{ text_link(r.link[0], r.link[1]) }}
+            {%- else %}
+            <button class="a-textLink" type="button" data-quiz-restart>{{ T.restart }}<svg class="a-svg" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            {%- endif %}
+          </div>
+          <p class="o-quiz__resultNote">{{ T.note }}</p>
+          <div class="o-quiz__nav"><button class="a-textLink" type="button" data-quiz-back>{{ T.back }}</button></div>
+        </div>
+        <div class="o-quiz__lead o-quiz__photo" aria-hidden="true">{{ photo(RESULT_PHOTO[r.id], '(min-width: 1025px) 34vw, (min-width: 641px) 60vw, 100vw', cls='o-quiz__img', alt='') }}</div>
+      </div>
+      {%- endfor %}
+    </div>
+
+  </div>
+</section>
+</div>

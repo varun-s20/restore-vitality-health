@@ -1,0 +1,40 @@
+<!-- meta
+title: Pricing | Restore Vitality Health
+description: Every Restore Vitality Health price in one place, from $96 per 4 weeks. One price per billing period covers your provider review, medication if prescribed, and support.
+-->
+{%- set T = {
+  'title': '**Pricing**',
+  'line': 'One price for each billing period, shown before you start, for every program we offer.',
+  'from': 'From',
+  'cards': [
+    {'key': 'men', 'pill': "Men's health", 'name': "Men's **health**", 'blurb': 'Seven treatments for erectile dysfunction, as tablets or liposomal vials.', 'price': '$96', 'period': 'per 4 weeks', 'cta': "See men's treatments", 'href': 'mens-health.html',
+     'programs': ['Erectile dysfunction, $96 to $119 per 4 weeks']},
+    {'key': 'women', 'pill': "Women's health", 'name': "Women's **health**", 'blurb': 'Menopause care, with hormone and non-hormonal options.', 'price': '$237', 'period': 'per 12 weeks', 'cta': "See women's treatments", 'href': 'womens-health.html',
+     'programs': ['Menopause hormone therapy, $237 per 12 weeks', 'Non-hormonal option, $237 per 12 weeks']},
+    {'key': 'shared', 'pill': 'Shared', 'name': '**Shared**', 'blurb': 'Weight loss, GLP-1 microdosing and longevity, for men and women.', 'price': '$145', 'period': 'per 4 weeks', 'cta': 'See shared treatments', 'href': 'shared-treatments.html',
+     'programs': ['Medical weight loss, $249 to $339 per 4 weeks', 'GLP-1 microdosing, $179 per 4 weeks', 'Longevity, $145 to $229 per 4 weeks']}],
+  'includes': 'Every plan includes',
+  'include_items': ['Review by a provider licensed in your state', 'Your medication, if your provider prescribes it', 'Online support through My portal'],
+  'covers_title': 'What your price **covers**',
+  'covers_body': 'Your price is one bundled amount for each billing period. It covers a review by a provider licensed in your state, your medication if it is prescribed, and online support. Depending on your plan and medical eligibility, it may also include follow-up consultations, care coordination, lab services and access to a 24/7 patient support line.',
+  'not_included': 'Not included',
+  'not_items': ['Shipping and processing fees, which are shown before you complete your order', 'Services from outside companies, such as a separate lab, which may bill you directly', 'Insurance billing: our plans are paid privately'],
+  'billing_title': 'How billing **works**',
+  'billing': [
+    ['When you are charged', 'when you complete your intake, for your first billing period.'],
+    ['Renewal', 'your plan renews automatically every 4 or 12 weeks, at the price shown when you enrolled, until you cancel.'],
+    ['Cancelling', 'at any time, by email or in your account, at least 72 hours before your next billing date.'],
+    ['Refunds', 'a full refund if a provider finds you are not a fit for medical reasons, or if you cancel within 72 hours and have not received any services. Prescription medications cannot be returned once ordered.']],
+  'compare_title': 'Compare **programs**',
+  'cols': ['Program', 'Group', 'Forms', 'Billed every', 'From'],
+  'rows': [
+    ['Erectile dysfunction', "Men's health", 'Tablet, liposomal vial', '4 weeks', '$96', 'mens-health.html'],
+    ['Menopause care', "Women's health", 'Cream, patch, tablet', '12 weeks', '$237', 'womens-health.html'],
+    ['Medical weight loss', 'Shared', 'Tablet, weekly injection', '4 weeks', '$249', 'shared-treatments.html'],
+    ['GLP-1 microdosing', 'Shared', 'Weekly injection', '4 weeks', '$179', 'shared-treatments.html'],
+    ['Longevity', 'Shared', 'Injection, nasal spray, liposomal', '4 weeks', '$145', 'shared-treatments.html']],
+  'see': 'See treatments',
+  'caption': 'Restore Vitality Health programs compared by group, forms, billing period and starting price',
+  'faq': 'Billing **questions**'
+} %}
+{% include "partials/page-pricing.html" %}

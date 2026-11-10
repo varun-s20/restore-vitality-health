@@ -1,0 +1,87 @@
+{#- Pricing page (spec 2b, Sollis pricing). The page source sets T. Compare sits before How billing works so a
+    plum band always separates two light ones (spec 2b). Site standard pass (10 Nov): one cream for the cards, every
+    band heading on the gutter, the covers list and the billing rows on the 40% line, like the FAQ below them. -#}
+<div class="t-pricing">
+
+{{ banner(T.title, T.line, 'pricing', kind='split') }}
+
+<!-- ===== Pricing: program cards ===== -->
+<div class="o-band -light o-pricing" data-header-theme="light">
+  <div class="o-pricing__tabs" role="tablist" aria-labelledby="page-title" data-tabs data-tabs-class="is-current" hidden>
+    {%- for c in T.cards %}
+    <button class="o-pricing__tab" type="button" role="tab" id="price-tab-{{ c.key }}" aria-controls="price-{{ c.key }}" aria-selected="{{ 'true' if loop.first else 'false' }}">{{ c.pill }}</button>
+    {%- endfor %}
+  </div>
+  <div class="o-pricing__grid -full">
+    {%- for c in T.cards %}
+    <article class="m-priceCard -full -{{ c.key }}{{ ' is-current' if loop.first }}" id="price-{{ c.key }}" role="tabpanel" aria-labelledby="price-name-{{ c.key }}">
+      <h2 class="m-priceCard__name t-h3" id="price-name-{{ c.key }}">{{ c.name|hl }}</h2>
+      <p class="m-priceCard__blurb">{{ c.blurb }}</p>
+      <p class="m-priceCard__price"><span class="m-priceCard__from">{{ T.from }}</span> <span class="m-priceCard__amount">{{ c.price }}</span> <span class="m-priceCard__period">{{ c.period }}</span></p>
+      <ul class="m-priceCard__programs">
+        {%- for line in c.programs %}
+        <li>{{ line }}</li>
+        {%- endfor %}
+      </ul>
+      <div class="m-priceCard__action">{{ button(c.cta, c.href, '-plum') }}</div>
+    </article>
+    {%- endfor %}
+  </div>
+  {#- "Every plan includes" (T.includes, T.include_items) is not shown here: the band straight after it, "What your
+      price covers", states the same three facts in full (site standard 4: never repeat the next band's fact). -#}
+</div>
+
+<!-- ===== Pricing: what your price covers ===== -->
+<section class="o-band -plum o-covers" aria-labelledby="covers-title">
+  {{ intro('covers-title', T.covers_title, T.covers_body) }}
+  <div class="o-prose">
+    <p class="m-listTitle -onDark">{{ T.not_included }}</p>
+    <ul class="m-list">
+      {%- for i in T.not_items %}
+      <li>{{ i }}</li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<!-- ===== Pricing: compare programs ===== -->
+<section class="o-band -light o-compare" aria-labelledby="compare-title" data-header-theme="light">
+  {{ intro('compare-title', T.compare_title, None) }}
+  <div class="o-compare__wrap">
+    <table class="o-compare__table">
+      <caption class="sr-only">{{ T.caption }}</caption>
+      <thead>
+        <tr>{% for h in T.cols %}<th scope="col">{{ h }}</th>{% endfor %}<th scope="col"><span class="sr-only">{{ T.see }}</span></th></tr>
+      </thead>
+      <tbody>
+        {%- for name, group, forms, every, price, href in T.rows %}
+        <tr>
+          <th scope="row">{{ name }}</th>
+          <td data-label="{{ T.cols[1] }}">{{ group }}</td>
+          <td data-label="{{ T.cols[2] }}">{{ forms }}</td>
+          <td data-label="{{ T.cols[3] }}">{{ every }}</td>
+          <td data-label="{{ T.cols[4] }}"><span class="o-compare__price">{{ price }}</span></td>
+          <td>{{ text_link(T.see, href) }}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===== Pricing: how billing works ===== -->
+<section class="o-band -deep o-billing" aria-labelledby="billing-title">
+  {{ intro('billing-title', T.billing_title, None) }}
+  <dl class="o-billing__list">
+    {%- for term, def in T.billing %}
+    <div class="o-billing__row"><dt class="o-billing__term">{{ term }}</dt><dd class="o-billing__def">{{ def }}</dd></div>
+    {%- endfor %}
+  </dl>
+</section>
+
+<!-- ===== Pricing: FAQ (the Billing tab of the FAQ page) ===== -->
+{{ faq('pricing-faq', T.faq, [['', faq_themes[2][1]]]) }}
+
+{{ closing(photo='band-closing-info') }}
+
+</div>

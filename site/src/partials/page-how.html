@@ -1,0 +1,49 @@
+{#- How it works page (spec 2b, critic fix pass 10 Nov): the split banner, then the five steps on cream. The five-step
+    index (the timeline copy) opens the steps band as its anchor navigation; the rows alternate photo sides and the
+    Delivery row runs wide. No eyebrow labels over the step titles. No sticky stage. The page source sets T. -#}
+<div class="t-how">
+
+<!-- ===== How it works: split banner (photo half), the page's h1 ===== -->
+{{ banner(T.title, T.line, 'how', kind='split') }}
+
+<!-- ===== How it works: the five steps. The step index is the in-page navigation; the rows alternate sides so no
+     two rows read alike, and the Delivery row (a parcel, no people) runs wide. No step labels over the titles. ===== -->
+<section class="o-band -light o-howPage" aria-labelledby="page-title" data-header-theme="light">
+  <nav class="o-howPage__index" aria-labelledby="page-title">
+    <ol class="o-howPage__indexList">
+      {%- for name, text in T.timeline %}
+      <li class="o-howPage__indexItem"><a class="o-howPage__indexLink" href="#step-{{ T.steps[loop.index0][0] }}"><svg class="a-svg o-howPage__indexIcon" aria-hidden="true"><use href="#i-step-{{ T.steps[loop.index0][0]|replace('-', '') }}"/></svg><span class="o-howPage__indexName">{{ name }}</span><span class="o-howPage__indexText">{{ text }}</span></a></li>
+      {%- endfor %}
+    </ol>
+  </nav>
+  <ol class="o-howPage__list">
+    {%- for slug, name, title, text in T.steps %}
+    <li class="o-howPage__step{{ ' -flip' if loop.index is even }}{{ ' -wide' if slug == 'delivery' }}" id="step-{{ slug }}">
+      {%- if product_art.photo is defined %}
+      <div class="o-howPage__media m-photoCell" aria-hidden="true">{{ product_art.photo('step-' ~ slug|replace('follow-up', 'followup'), ('(min-width: 1025px) 58vw' if slug == 'delivery' else '(min-width: 1025px) 42vw') ~ ', (min-width: 641px) 60vw, calc(100vw - 32px)', cls='m-photoCell__img') }}</div>
+      {%- endif %}
+      <div class="o-howPage__text">
+        <svg class="a-svg o-howPage__icon" aria-hidden="true"><use href="#i-step-{{ slug|replace('-', '') }}"/></svg>
+        <h2 class="o-howPage__title">{{ title|hl }}</h2>
+        <p class="o-howPage__body">{{ text }}</p>
+        {%- if slug == 'delivery' %}
+        <p class="o-howPage__note">{{ S.disclaimer[1] }}</p>
+        {%- endif %}
+      </div>
+    </li>
+    {%- endfor %}
+  </ol>
+</section>
+
+<!-- ===== How it works: quiz strip (plum, so the cream steps never touch the cream FAQ) ===== -->
+<div class="o-quizStrip">
+  <div class="o-quizStrip__inner">{{ quiz_row() }}</div>
+</div>
+
+<!-- ===== How it works: FAQ ===== -->
+{%- set th = faq_themes -%}
+{{ faq('how-faq', T.faq, [['', [th[0][1][2], th[1][1][0], th[0][1][3], th[1][1][2], th[2][1][2]]]]) }}
+
+{{ closing(photo='band-closing-info') }}
+
+</div>

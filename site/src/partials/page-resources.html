@@ -1,0 +1,21 @@
+{#- Resources index. Varun, 10 Nov: "the resources coming soon design also needs update not like this where it has a
+    whole big section of nothing. that can come once we have some resources." Until articles exist the page is one
+    composed screen: the cream text banner holds the title and the standfirst, and beside them (under them on phones)
+    a plum panel with the empty-state sentence and the sign-up it points to. Then the closing band and the footer, so
+    the page runs cream, then two dark bands (closing, footer), never three.
+    Later: when articles arrive, their index grid goes in a plum band between the banner and the closing band, in
+    place of the panel (the article page is src/templates/article.body.html, kept). The page source sets T. -#}
+<div class="t-resources">
+
+<!-- ===== Resources: banner with the coming-soon panel ===== -->
+<!-- CLIENT COPY REQUIRED: articles (none supplied yet) -->
+{% call banner(T.title, T.stand, 'resources', kind='text') %}
+  <section class="o-resources__soon" aria-labelledby="resources-soon">
+    <p class="o-resources__soonText" id="resources-soon">{{ T.empty }}</p>
+    {{ newsletter('resources-newsletter', form_only=True) }}
+  </section>
+{% endcall %}
+
+{{ closing(photo='band-closing-utility') }}
+
+</div>

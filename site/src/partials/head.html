@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="{{ S.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ meta.title }}</title>
+<meta name="description" content="{{ meta.description }}">
+<link rel="canonical" href="{{ SITE_URL }}/{{ url_path }}">
+<link rel="alternate" hreflang="en" href="{{ SITE_URL }}/{{ en_path }}">
+<link rel="alternate" hreflang="es" href="{{ SITE_URL }}/es/{{ en_path }}">
+<link rel="alternate" hreflang="x-default" href="{{ SITE_URL }}/{{ en_path }}">
+<meta name="theme-color" content="#4A2E3D">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ ROOT }}assets/icons/rvh-favicon-32.png">
+<link rel="apple-touch-icon" href="{{ ROOT }}assets/icons/rvh-apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Restore Vitality Health">
+<meta property="og:locale" content="{{ S.locale }}">
+<meta property="og:url" content="{{ SITE_URL }}/{{ url_path }}">
+<meta property="og:title" content="{{ meta.og_title or meta.title }}">
+<meta property="og:description" content="{{ meta.og_description or meta.description }}">
+<meta property="og:image" content="{{ SITE_URL }}/assets/icons/rvh-og-mark.png">
+<meta property="og:image:alt" content="{{ S.lockup_alt }}">
+<meta name="twitter:card" content="summary">
+{%- if meta.noindex %}
+<meta name="robots" content="noindex">
+{%- endif %}
+<script>document.documentElement.className += ' js';</script>
+<link rel="preload" href="{{ ROOT }}assets/fonts/CarbonaVariableTest-Regular.otf" as="font" type="font/otf" crossorigin>
+{%- if meta.preload %}
+<link rel="preload" as="image" href="{{ ROOT }}{{ meta.preload }}" type="image/webp" fetchpriority="high">
+{%- endif %}
+<link rel="stylesheet" href="{{ ROOT }}assets/global.css">
+<link rel="stylesheet" href="{{ ROOT }}assets/photo-focus.css">
+<script src="{{ ROOT }}assets/global.js" defer></script>
+{%- if schema %}
+<script type="application/ld+json">{{ schema }}</script>
+{%- endif %}
+</head>
+<body>

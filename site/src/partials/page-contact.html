@@ -1,0 +1,73 @@
+{% from "partials/macros.html" import photo_cell, lit_tile with context %}
+{#- Contact page (spec 2b): plum panel over the terrace photo on the left (sizes 2100px at 1025 up: the 3:2 photo covers a box about 1400px tall, so it renders about 2100px wide), the callback form on cream on the right.
+    The page source sets T. The form posts to window.SITE_FORM_ENDPOINT and never reports success unless that
+    endpoint answers OK. CLIENT COPY REQUIRED: the notification email the form should send to. -#}
+<div class="t-contact">
+<div class="o-contact">
+
+  <!-- ===== Contact: glass panel ===== -->
+  <section class="o-contact__side" aria-labelledby="page-title">
+    {%- if product_art.photo is defined %}<div class="o-contact__media -photo" aria-hidden="true">{{ product_art.photo('band-contact', '(min-width: 1025px) 2100px, 100vw', cls='o-contact__img', lazy=False) }}</div>{%- else %}<div class="o-contact__media" aria-hidden="true">{{ img('rvh-r-bowl', '520px', lazy=False) }}</div>{%- endif %}
+    <div class="o-contact__glass">
+      <h1 class="o-contact__title" id="page-title">{{ T.title|hl }}</h1>
+      <p class="o-contact__line">{{ T.line }}</p>
+      <dl class="o-contact__facts">
+        <div class="o-contact__fact"><dt class="o-contact__label">{{ T.email_label }}</dt><dd class="o-contact__value"><a href="mailto:{{ S.email }}">{{ S.email }}</a></dd></div>
+        <!-- CLIENT COPY REQUIRED: phone number (placeholder visible for this round, Varun's note) -->
+        <div class="o-contact__fact"><dt class="o-contact__label">{{ T.phone_label }}</dt><dd class="o-contact__value">{{ S.phone }}</dd></div>
+        <div class="o-contact__fact"><dt class="o-contact__label">{{ T.hours_label }}</dt><dd class="o-contact__value">{{ T.hours }}</dd></div>
+      </dl>
+      <p class="o-contact__portal"><a class="a-inline" href="https://rx.restorevitality.health/patient-portal" target="_blank" rel="noopener">{{ T.portal_line }}<span class="sr-only">{{ S.new_tab }}</span></a></p>
+    </div>
+  </section>
+
+  <!-- ===== Contact: callback form ===== -->
+  <section class="o-contact__formWrap" aria-labelledby="callback-title" data-header-theme="light">
+    <form class="o-contact__form" novalidate data-form data-msg-required="{{ S.form.required }}" data-msg-email="{{ S.form.email }}" data-msg-phone="{{ S.form.phone }}" data-msg-sending="{{ S.form.sending }}" data-msg-error="{{ S.form.error }}" data-msg-success="{{ T.success }}">
+      <h2 class="o-contact__formTitle t-h2" id="callback-title">{{ T.form_title|hl }}</h2>
+      <p class="o-contact__intro">{{ T.form_intro }}</p>
+      <input type="hidden" name="form" value="callback">
+      <input type="hidden" name="language" value="{{ S.lang }}">
+      <div class="m-field">
+        <label class="m-field__label" for="cb-name">{{ T.f_name }}</label>
+        <input class="m-field__input" id="cb-name" name="name" type="text" autocomplete="name" required aria-describedby="cb-name-error">
+        <p class="m-field__error" id="cb-name-error"></p>
+      </div>
+      <div class="m-field">
+        <label class="m-field__label" for="cb-email">{{ T.f_email }}</label>
+        <input class="m-field__input" id="cb-email" name="email" type="email" autocomplete="email" required aria-describedby="cb-email-error">
+        <p class="m-field__error" id="cb-email-error"></p>
+      </div>
+      <div class="m-field">
+        <label class="m-field__label" for="cb-phone">{{ T.f_phone }}</label>
+        <p class="m-field__hint" id="cb-phone-hint">{{ T.f_phone_hint }}</p>
+        <input class="m-field__input" id="cb-phone" name="phone" type="tel" autocomplete="tel" required aria-describedby="cb-phone-hint cb-phone-error">
+        <p class="m-field__error" id="cb-phone-error"></p>
+      </div>
+      <div class="m-field">
+        <label class="m-field__label" for="cb-time">{{ T.f_time }}</label>
+        <select class="m-field__input" id="cb-time" name="best_time">
+          {%- for o in T.f_time_options %}
+          <option>{{ o }}</option>
+          {%- endfor %}
+        </select>
+      </div>
+      <div class="m-field">
+        <label class="m-field__label" for="cb-message">{{ T.f_message }}</label>
+        <p class="m-field__hint" id="cb-message-hint">{{ T.f_message_hint }}</p>
+        <textarea class="m-field__input" id="cb-message" name="message" aria-describedby="cb-message-hint"></textarea>
+      </div>
+      <div class="m-field">
+        <label class="m-check" for="cb-consent"><input id="cb-consent" name="consent" type="checkbox" value="yes" required aria-describedby="cb-consent-error"> <span>{{ T.f_consent }}</span></label>
+        <p class="m-field__error" id="cb-consent-error"></p>
+      </div>
+      <div><button class="a-button -plum" type="submit"><span class="a-button__label">{{ T.submit }}</span><svg class="a-svg a-button__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+      <p class="m-formStatus" role="status" tabindex="-1" data-form-status></p>
+    </form>
+  </section>
+
+</div>
+
+{{ closing(photo='band-closing-info') }}
+
+</div>

@@ -1,0 +1,167 @@
+<!-- meta
+title: Restore Vitality Health | Atención con receta en la mediana edad
+description: Programas con receta para hombres y mujeres en la mediana edad: salud sexual, menopausia, pérdida de peso y longevidad. Revisados en línea por un profesional con licencia.
+-->
+<div class="t-home">
+
+<!-- ===== Home: hero (approved prototype) ===== -->
+{#- hero and stage sizes: as in the English page (final leftovers, 11 Nov) -#}
+<section class="o-homeHero -sky" aria-labelledby="home-hero-title" data-hero>
+  <div class="o-homeHero__stage" data-header-theme="light" data-hero-stage>
+    <div class="o-homeHero__frame" data-hero-frame>
+      <div class="o-homeHero__settle">
+        {%- if photo is defined %}{{ photo('hero', '(max-aspect-ratio: 151/100) 160vh, 112vw', cls='o-homeHero__img', lazy=False) }}{%- else %}<picture><source media="(max-aspect-ratio: 2/3)" type="image/webp" srcset="{{ ROOT }}assets/images/photo/hero-phone-640.webp 640w, {{ ROOT }}assets/images/photo/hero-phone-960.webp 960w" sizes="100vw"><img class="o-homeHero__img" src="{{ ROOT }}assets/images/photo/hero-1600.webp" srcset="{{ ROOT }}assets/images/photo/hero-960.webp 960w, {{ ROOT }}assets/images/photo/hero-1280.webp 1280w, {{ ROOT }}assets/images/photo/hero-1600.webp 1600w, {{ ROOT }}assets/images/photo/hero-2400.webp 2400w" sizes="100vw" width="2400" height="1592" alt="Una pareja mayor sentada en un banco de una terraza de piedra, mirando el mar" fetchpriority="high" data-hero-img></picture>{%- endif %}
+      </div>
+    </div>
+    <div class="o-homeHero__content">
+      <h1 class="o-homeHero__title" id="home-hero-title">
+      <span class="o-homeHero__row"><span class="o-homeHero__rowInner">Rumbo a</span></span>
+      <span class="o-homeHero__pair"><span class="o-homeHero__row"><span class="o-homeHero__rowInner -bold">su próxima</span></span> <span class="o-homeHero__row"><span class="o-homeHero__rowInner -bold">aventura</span></span></span>
+    </h1>
+      <div class="o-homeHero__leadMask"><p class="o-homeHero__lead">Atención con receta para hombres y mujeres en la mediana edad: salud sexual, menopausia, pérdida de peso y longevidad, revisada en línea por un profesional con licencia en su estado.</p></div>
+      <div class="o-homeHero__actionsMask"><div class="o-homeHero__actions">
+      {{ button('Encontrar su programa', 'quiz.html') }}
+      <p class="a-chip -fact">Planes desde $96 cada 4 semanas</p>
+      </div></div>
+      <p class="o-homeHero__cue" aria-hidden="true">Desplácese para descubrir</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Home: treatments rail ===== -->
+<section class="o-treatments" aria-labelledby="treatments-title">
+  <h2 class="sr-only" id="treatments-title">{{ S.treatments_h }}</h2>
+  <div class="m-tabs" role="tablist" aria-labelledby="treatments-title" data-tabs>
+    {%- for key, label in S.tabs %}
+    <button class="m-tabs__tab" type="button" role="tab" id="rail-tab-{{ key }}" aria-controls="rail-{{ key }}" aria-selected="{{ 'true' if loop.first else 'false' }}">{{ label }}</button>
+    {%- endfor %}
+  </div>
+  {%- for key, label in S.tabs %}
+  <div class="m-rail" role="tabpanel" id="rail-{{ key }}" aria-labelledby="rail-tab-{{ key }}" data-rail{% if not loop.first %} hidden{% endif %}>
+    {%- for p in by_cat(key) %}
+    {{ card(p) }}
+    {%- endfor %}
+  </div>
+  {%- endfor %}
+  {{ safety('o-treatments__safety') }}
+</section>
+
+<!-- ===== Home: credibility row ===== -->
+{{ cred() }}
+
+<!-- ===== Home: how it works ===== -->
+{%- macro step_photo(slug, sizes, cls) -%}
+{%- if photo is defined -%}{{ photo('step-' ~ slug, sizes, cls=cls, lazy=True) }}
+{%- else -%}<img class="{{ cls }}" src="{{ ROOT }}assets/images/photo/step-{{ slug }}-960.webp" srcset="{{ ROOT }}assets/images/photo/step-{{ slug }}-640.webp 640w, {{ ROOT }}assets/images/photo/step-{{ slug }}-960.webp 960w" sizes="{{ sizes }}" alt="" loading="lazy" decoding="async">{%- endif -%}
+{%- endmacro %}
+{%- set how_steps = [
+      ('consult', 'Consulta', 'Cuéntenos **sobre usted**', 'Elija un programa y complete un breve formulario en línea sobre su salud y sus metas. Un profesional con licencia lo revisa por video, por teléfono o por mensaje.'),
+      ('labs', 'Análisis', 'Análisis, **si hacen falta**', 'Algunos tratamientos requieren resultados de laboratorio. Si es su caso, su profesional le dirá qué necesita y, con su consentimiento, se pueden añadir resultados que ya tenga.'),
+      ('plan', 'Plan', 'Su **plan**', 'Su profesional decide si una receta es adecuada para usted y en qué dosis. Si no lo es, puede sugerirle otra opción, y se le reembolsa el total.'),
+      ('delivery', 'Envío', 'Hasta **su puerta**', 'Una farmacia asociada con licencia prepara su receta y se la envía. Recibe avisos por mensaje de texto o correo electrónico durante el envío.'),
+      ('follow-up', 'Seguimiento', 'Atención **continua**', 'Su plan se renueva cada periodo, con recordatorios de resurtido por mensaje o correo. Administre su cuenta en Mi portal y cancele cuando quiera.')] %}
+<section class="o-howR2" aria-labelledby="how-title" data-header-theme="light">
+  <div class="o-howR2__intro">
+    <h2 class="o-howR2__title t-h2" id="how-title">{{ 'Cómo **funciona**'|hl }}</h2>
+    <p class="o-howR2__statement" data-litwords>Desde sus primeras respuestas hasta su próximo resurtido, todo sucede en línea. Un profesional con licencia en su estado revisa su historial y decide qué recetar, si corresponde. Siempre sabe cuánto paga y cuándo.</p>
+  </div>
+  <div class="o-stage" data-stage>
+    <div class="o-stage__stage">
+      <div class="o-stage__media" aria-hidden="true">
+        {%- for slug, name, title, text in how_steps %}
+        <figure class="o-stage__panel" data-sstep-panel="{{ loop.index0 }}">{{ step_photo(slug|replace('-', ''), '(min-width: 1025px) 54vw, 100vw', 'o-stage__img') }}<span class="o-stage__shade" data-sstep-shade></span></figure>
+        {%- endfor %}
+      </div>
+      <div class="o-stage__text">
+        <ol class="o-stage__names" aria-hidden="true">
+          {%- for slug, name, title, text in how_steps %}
+          <li class="o-stage__name{{ ' is-active' if loop.first }}" data-sstep-name><svg class="a-svg o-stage__icon" aria-hidden="true"><use href="#i-step-{{ slug|replace('-', '') }}"/></svg><span class="o-stage__label">{{ name }}</span></li>
+          {%- endfor %}
+        </ol>
+        <div class="o-stage__progress" aria-hidden="true"><span class="o-stage__bar" data-stage-bar></span></div>
+        <ol class="o-stage__list">
+          {%- for slug, name, title, text in how_steps %}
+          <li class="m-sstep{{ ' is-active' if loop.first }}" data-sstep data-panel="{{ loop.index0 }}">
+            <figure class="m-sstep__media">{{ step_photo(slug|replace('-', ''), '(min-width: 641px) 360px, 92vw', '') }}</figure>
+            <div class="m-sstep__text">
+              <p class="m-sstep__name"><svg class="a-svg m-sstep__icon" aria-hidden="true"><use href="#i-step-{{ slug|replace('-', '') }}"/></svg><span class="m-sstep__label">{{ name }}</span></p>
+              <h3 class="m-sstep__title">{{ title|hl }}</h3>
+              <p class="m-sstep__body">{{ text }}</p>
+              {%- if slug == 'delivery' %}
+              <p class="m-sstep__note">{{ S.disclaimer[1] }}</p>
+              {%- endif %}
+            </div>
+          </li>
+          {%- endfor %}
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Home: quiz entry band ===== -->
+<section class="o-quizBand" aria-labelledby="start-title" data-sticky-stop>
+  <div class="o-quizBand__media" aria-hidden="true">{%- if photo is defined %}{{ photo('band-quiz', '100vw', cls='o-quizBand__photo') }}{%- else %}<img class="o-quizBand__photo" src="{{ ROOT }}assets/images/photo/band-quiz-1600.webp" srcset="{{ ROOT }}assets/images/photo/band-quiz-960.webp 960w, {{ ROOT }}assets/images/photo/band-quiz-1600.webp 1600w, {{ ROOT }}assets/images/photo/band-quiz-2400.webp 2400w" sizes="100vw" alt="" loading="lazy" decoding="async">{%- endif %}</div>
+  <div class="o-quizBand__panel">
+    <h2 class="o-quizBand__title" id="start-title">{{ '¿Por dónde **quiere empezar?**'|hl }}</h2>
+    <ul class="o-quizBand__routes">
+      <!-- clean-up (10 Nov): the price chips are hidden on home (.t-home), the pricing cards below show the same facts -->
+      <li><a class="o-quizBand__route -mens" href="mens-health.html"><span>{{ "Salud **masculina**"|hl }}</span><span class="a-chip">Desde $96 cada 4 semanas</span><svg class="a-svg o-quizBand__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li><a class="o-quizBand__route -womens" href="womens-health.html"><span>{{ "Salud **femenina**"|hl }}</span><span class="a-chip">Desde $237 cada 12 semanas</span><svg class="a-svg o-quizBand__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li><a class="o-quizBand__route -shared" href="shared-treatments.html"><span>{{ '**Para todos**'|hl }}</span><span class="a-chip">Desde $145 cada 4 semanas</span><svg class="a-svg o-quizBand__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+    </ul>
+    <p class="o-quizBand__more">{{ text_link('¿No está seguro? Responda dos preguntas', 'quiz.html') }}</p>
+  </div>
+</section>
+
+<!-- Real results: held until the client sends real reviews (spec 2b). CLIENT COPY REQUIRED: reviews. -->
+
+<!-- ===== Home: pricing tease ===== -->
+<section class="o-band -light o-pricing" aria-labelledby="pricing-title" data-header-theme="light">
+  {{ intro('pricing-title', 'Precios claros, **sin sorpresas**', 'Cada programa tiene un precio por periodo de cobro, visible antes de empezar. Incluye la revisión de su profesional, su medicamento si se lo recetan y apoyo en línea.') }}
+  {%- set cards = [
+    ('men', 'Salud masculina', 'Salud **masculina**', 'Siete tratamientos para la disfunción eréctil, en tabletas o viales liposomales.', '$96', 'cada 4 semanas', 'Ver tratamientos', 'mens-health.html'),
+    ('women', 'Salud femenina', 'Salud **femenina**', 'Atención para la menopausia, con opciones hormonales y no hormonales.', '$237', 'cada 12 semanas', 'Ver tratamientos', 'womens-health.html'),
+    ('shared', 'Para todos', '**Para todos**', 'Pérdida de peso, microdosis de GLP-1 y longevidad, para hombres y mujeres.', '$145', 'cada 4 semanas', 'Ver tratamientos', 'shared-treatments.html')] %}
+  <div class="o-pricing__tabs" role="tablist" aria-labelledby="pricing-title" data-tabs data-tabs-class="is-current" hidden>
+    {%- for key, pill, name, blurb, price, period, cta, href in cards %}
+    <button class="o-pricing__tab" type="button" role="tab" id="price-tab-{{ key }}" aria-controls="price-{{ key }}" aria-selected="{{ 'true' if loop.first else 'false' }}">{{ pill }}</button>
+    {%- endfor %}
+  </div>
+  <div class="o-pricing__grid">
+    {%- for key, pill, name, blurb, price, period, cta, href in cards %}
+    <article class="m-priceCard -{{ key }}{{ ' is-current' if loop.first }}" id="price-{{ key }}" role="tabpanel" aria-labelledby="price-name-{{ key }}">
+      <h3 class="m-priceCard__name t-h3" id="price-name-{{ key }}">{{ name|hl }}</h3>
+      <p class="m-priceCard__blurb">{{ blurb }}</p>
+      <p class="m-priceCard__price"><span class="m-priceCard__from">Desde</span> <span class="m-priceCard__amount">{{ price }}</span> <span class="m-priceCard__period">{{ period }}</span></p>
+      <div class="m-priceCard__action">{{ button(cta, href, '-plum') }}</div>
+    </article>
+    {%- endfor %}
+  </div>
+  <div class="m-priceCard__includes">
+    <p class="m-priceCard__includesTitle">Todos los planes incluyen</p>
+    <ul class="m-priceCard__list">
+      <li>Revisión de un profesional con licencia en su estado</li>
+      <li>Su medicamento, si su profesional se lo receta</li>
+      <li>Apoyo en línea a través de Mi portal</li>
+    </ul>
+  </div>
+  <p class="o-pricing__more">{{ text_link('Ver todos los precios', 'pricing.html') }}</p>
+</section>
+
+<!-- ===== Home: newsletter (the resources rail waits for articles) ===== -->
+<!-- Placed between the two light bands (pricing, FAQ), so cream never touches cream (spec 2b). Clean-up (10 Nov): a solid
+     plum band; its photo repeated the closing band's treatment two bands later (design/homepage-cleanup.md, 6). -->
+<section class="o-band -plum o-newsletter" aria-labelledby="newsletter-title">
+  {{ newsletter('newsletter') }}
+</section>
+
+<!-- ===== Home: FAQ tease ===== -->
+{%- set tease = [] %}
+{%- for name, items in faq_themes %}{% set _ = tease.append([name, items[:4]]) %}{% endfor %}
+{{ faq('home-faq', 'Preguntas **frecuentes**', tease, more=('Ver todas las preguntas', 'faq.html')) }}
+
+<!-- ===== Closing CTA band ===== -->
+{{ closing(photo='band-closing-home') }}
+
+</div>

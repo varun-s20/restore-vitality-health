@@ -1,0 +1,65 @@
+{% from "partials/macros.html" import photo_cell, lit_tile with context %}
+{#- Category page body (spec 2b: Men's, Women's, Shared). The page source sets: cat, title, line, who. -#}
+<div class="t-category">
+
+<!-- ===== Category: editorial cover (title split around an inset photo) ===== -->
+{#- The CTA is the submenu's own "See ... treatments" / "Ver tratamientos" link copy, here as an anchor to the grid. -#}
+{%- set hero_cta = {'mens': "See men's treatments", 'womens': "See women's treatments", 'shared': 'See shared treatments'} if L == 'en' else {'mens': 'Ver tratamientos', 'womens': 'Ver tratamientos', 'shared': 'Ver tratamientos'} %}
+{{ banner(title, line, cat, kind='cover', cta=[hero_cta[cat], '#treatments']) }}
+
+<!-- ===== Category: treatment grid ===== -->
+<section class="o-band -plum o-catGrid" id="treatments" aria-labelledby="grid-title">
+  <h2 class="sr-only" id="grid-title">{{ S.treatments_h }}</h2>
+  {%- if cat == 'shared' %}
+  {%- for key in ['weight', 'micro', 'longevity'] %}
+  <div class="o-cardGroup" id="group-{{ key }}">
+    <h3 class="o-cardGroup__label t-label">{{ S.programs[key] }}</h3>
+    {%- set n = by_cat(cat)|selectattr('program', 'equalto', key)|list|length %}
+    <div class="o-cardGrid{{ ' -pair' if n == 2 }}">
+      {%- for p in by_cat(cat) if p.program == key %}
+      {{ card(p, 'h4', '(min-width: 1025px) 30vw, (min-width: 641px) 46vw, calc(100vw - 32px)') }}
+      {%- endfor %}
+    </div>
+  </div>
+  {%- endfor %}
+  <!-- Peptides: held until the client confirms names, prices and intake links. CLIENT COPY REQUIRED. -->
+  {%- else %}
+  <div class="o-cardGrid{{ ' -four' if cat in ('mens', 'womens') }}">
+    {%- for p in by_cat(cat) %}
+    {{ card(p, 'h3', '(min-width: 1025px) 23vw, (min-width: 641px) 46vw, calc(100vw - 32px)' if cat in ('mens', 'womens') else '(min-width: 1025px) 30vw, (min-width: 641px) 46vw, calc(100vw - 32px)') }}
+    {%- endfor %}
+  </div>
+  {%- endif %}
+  <div class="o-catGrid__notes">
+    {{ safety() }}
+    <p class="o-catGrid__appearance">{{ S.disclaimer[1] }}</p>
+  </div>
+</section>
+
+<!-- ===== Category: who it is for ===== -->
+{#- site standard 7: one heading size per band. One block takes the band heading (t-h2); the Shared page's three
+    blocks are peers, so each takes the tier under it (t-h3) and no block outranks the others. Left on one edge. -#}
+<div class="o-band -light o-who{{ ' -withPhoto' if product_art.photo is defined }}{{ ' -many' if who|length > 1 }}{{ ' -photoRight' if cat in ('womens', 'shared') }}" data-header-theme="light">
+  {{ photo_cell('people-' ~ cat, 'm-photoCell o-who__photo', '(min-width: 1025px) 38vw, (min-width: 641px) 60vw, calc(100vw - 32px)') }}
+  <div class="o-who__copy">
+  {%- for heading, body in who %}
+    <div class="o-who__block">
+      <h2 class="{{ 't-h3' if who|length > 1 else 't-h2' }} o-who__title" id="who-{{ loop.index }}"{% if who|length == 1 %} data-reveal{% endif %}>{{ heading|hl }}</h2>
+      <p class="o-who__text">{{ body }}</p>
+    </div>
+  {%- endfor %}
+  </div>
+</div>
+
+<!-- ===== Category: quiz row ===== -->
+<div class="o-quizStrip">
+  <div class="o-quizStrip__inner">{{ quiz_row() }}</div>
+</div>
+
+<!-- ===== Category: FAQ (heading centred over the list, so it does not repeat the split of the band before) ===== -->
+{{ faq('cat-faq', category_faq_heading(cat), [['', category_faq(cat)]]) }}
+
+<!-- ===== Closing CTA band ===== -->
+{{ closing(photo='band-closing-' ~ cat) }}
+
+</div>

@@ -1,0 +1,70 @@
+<!-- ===== Footer partial: footer, sticky CTA, cookie notice. Opens and closes its own elements. ===== -->
+<!-- Footer (clean-up, 10 Nov): rebuilt away from The Protocole's (text block left, columns right, brand image last).
+     Margaux: the lockup alone, small and first, centred, with clear air; caps-headed columns on one pitch; one gold
+     accent, used once (the email). Sollis: tones instead of lines, so the index sits on plum and the legal tier on
+     plum-deep, no hairlines inside. Neko: every part placed on one 12-column grid. Margaux again: one bottom row on a
+     single line. Content unchanged (design/homepage-cleanup.md, footer). -->
+<footer class="o-footer" data-sticky-stop>
+  <div class="o-footer__main">
+    <img class="o-footer__mark" src="{{ ROOT }}assets/images/brand/rvh-lockup-full-cream-480.webp" srcset="{{ ROOT }}assets/images/brand/rvh-lockup-full-cream-240.webp 240w, {{ ROOT }}assets/images/brand/rvh-lockup-full-cream-480.webp 480w" sizes="(min-width: 1441px) 14vw, (min-width: 1025px) 200px, 160px" width="{{ media['rvh-lockup-full-cream'][0][0] }}" height="{{ media['rvh-lockup-full-cream'][0][1] }}" alt="{{ S.lockup_alt }}" loading="lazy" decoding="async">
+    <div class="o-footer__grid">
+      <div class="o-footer__contact">
+        <a class="o-footer__email" href="mailto:{{ S.email }}">{{ S.email }}</a>
+        <p class="o-footer__hours">{{ S.hours }}</p>
+        <!-- CLIENT COPY REQUIRED: phone number (kept visible as a placeholder for this round, Varun's note) -->
+        <p class="o-footer__phone">{{ S.phone }}</p>
+        <!-- CLIENT COPY REQUIRED: a "We reply within" line, once the client gives a support reply time -->
+      </div>
+      <nav class="o-footer__cols" aria-label="{{ S.footer_label }}">
+        {%- for head, links in S.footer_cols %}
+        <div class="o-footer__col">
+          <p class="o-footer__head">{{ head }}</p>
+          <ul>
+            {%- for href, label in links %}
+            {%- if href == 'portal' %}
+            <li><a class="o-footer__link" href="https://rx.restorevitality.health/patient-portal" target="_blank" rel="noopener">{{ label }}<span class="sr-only">{{ S.new_tab }}</span></a></li>
+            {%- elif href == 'cookies' %}
+            <li><button class="o-footer__link" type="button" data-cookie-open>{{ label }}</button></li>
+            {%- else %}
+            <li><a class="o-footer__link" href="{{ href }}">{{ label }}</a></li>
+            {%- endif %}
+            {%- endfor %}
+          </ul>
+        </div>
+        {%- endfor %}
+      </nav>
+    </div>
+  </div>
+  <div class="o-footer__base">
+    <div class="o-footer__legal">
+      {%- for p in S.disclaimer %}
+      <p>{{ p }}</p>
+      {%- endfor %}
+    </div>
+    <div class="o-footer__bottom">
+      {{ lang_switch() }}
+      <p class="o-footer__copy">{{ S.copyright }}</p>
+      <a class="o-footer__link o-footer__backTop" href="#main">{{ S.back_top }}</a>
+      <p class="o-footer__credit">{{ S.credit.replace('Digital Heroes', '')|trim }} <a class="o-footer__creditLink" href="https://digitalheroesco.com/" target="_blank" rel="noopener">Digital Heroes</a></p>
+    </div>
+  </div>
+</footer>
+
+<div class="m-stickyCta" data-sticky-cta aria-hidden="true">
+  <a class="a-button -gold" href="quiz.html" tabindex="-1">
+    <span class="a-button__label">{{ S.find_program }}</span>
+    <svg class="a-svg a-button__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+  </a>
+</div>
+
+<div class="m-cookie" role="region" aria-label="{{ S.cookie_label }}" data-cookie hidden>
+  <p class="m-cookie__text">{{ S.cookie_text }}</p>
+  <div class="m-cookie__actions">
+    <button class="a-button -plum" type="button" data-cookie-accept>{{ S.cookie_accept }}</button>
+    <!-- Settings goes to the client's opt-out page until a consent tool with its own preference panel is chosen -->
+    <a class="a-button -outline -outlineDark" href="do-not-sell.html">{{ S.cookie_settings }}</a>
+  </div>
+</div>
+<!-- ===== /Footer partial ===== -->
+</body>
+</html>

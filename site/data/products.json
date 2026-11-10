@@ -1,0 +1,958 @@
+[
+ {
+  "slug": "daily-boost-pill",
+  "name": "Daily Boost Pill",
+  "category": "mens",
+  "program": "ed",
+  "weeks": 4,
+  "intake": "https://rx.restorevitality.health/intake?productId=UHJvZHVjdDoxNjg=&programId=erectile_dysfunction&type=intake",
+  "en": {
+   "chips": [
+    "Oral",
+    "Take as needed"
+   ],
+   "card": "Tadalafil in one simple tablet, taken when you need it.",
+   "price": "$112",
+   "period": "per 4 weeks",
+   "page": "One simple tablet with a single active, tadalafil, taken when you need it. It is a compounded prescription, so a licensed provider reviews your health history first and decides whether it suits you and at what dose. If it is prescribed, a partner pharmacy fills it and ships it to you.",
+   "benefits": [
+    "Enhances penile blood flow",
+    "Promotes smooth muscle relaxation",
+    "Boosts response to stimulation"
+   ],
+   "ingredients": [
+    "Tadalafil"
+   ]
+  },
+  "es": {
+   "chips": [
+    "Oral",
+    "Según necesidad"
+   ],
+   "card": "Tadalafil en una tableta sencilla, cuando la necesite.",
+   "price": "$112",
+   "period": "cada 4 semanas",
+   "page": "Una tableta sencilla con un solo activo, tadalafil, que se toma cuando la necesite. Es un medicamento compuesto con receta, así que un profesional con licencia revisa primero su historial de salud y decide si le conviene y en qué dosis. Si se lo recetan, una farmacia asociada lo prepara y se lo envía.",
+   "benefits": [
+    "Mejora el flujo sanguíneo del pene",
+    "Favorece la relajación del músculo liso",
+    "Aumenta la respuesta a la estimulación"
+   ],
+   "ingredients": [
+    "Tadalafil"
+   ]
+  }
+ },
+ {
+  "slug": "double-powered-liposomal",
+  "name": "Double Powered Liposomal",
+  "category": "mens",
+  "program": "ed",
+  "weeks": 4,
+  "intake": "https://rx.restorevitality.health/intake?productId=UHJvZHVjdDoxNjM=&programId=erectile_dysfunction&type=intake",
+  "en": {
+   "chips": [
+    "Oral",
+    "Take as needed"
+   ],
+   "card": "Sildenafil and tadalafil together, in one simple vial.",
+   "price": "$99",
+   "period": "per 4 weeks",
+   "page": "Two actives, sildenafil and tadalafil, combined in one liposomal vial you take by mouth when you need it. Liposomal means the actives are carried in a fine lipid layer. Your provider reviews your history and current medications and decides whether it is a fit.",
+   "benefits": [
+    "Encourages spontaneous readiness",
+    "Enhances sexual response",
+    "Supports stronger activity"
+   ],
+   "ingredients": [
+    "Sildenafil",
+    "Tadalafil"
+   ]
+  },
+  "es": {
+   "chips": [
+    "Oral",
+    "Según necesidad"
+   ],
+   "card": "Sildenafil y tadalafil juntos, en un vial sencillo.",
+   "price": "$99",
+   "period": "cada 4 semanas",
+   "page": "Dos activos, sildenafil y tadalafil, combinados en un vial liposomal que se toma por vía oral cuando lo necesite. Liposomal significa que los activos van dentro de una fina capa de lípidos. Su profesional revisa su historial y sus medicamentos actuales y decide si es adecuado para usted.",
+   "benefits": [
+    "Favorece la disposición espontánea",
+    "Mejora la respuesta sexual",
+    "Apoya una actividad más firme"
+   ],
+   "ingredients": [
+    "Sildenafil",
+    "Tadalafil"
+   ]
+  }
+ },
+ {
+  "slug": "double-powered-pill",
+  "name": "Double Powered Pill",
+  "category": "mens",
+  "program": "ed",
+  "weeks": 4,
+  "intake": "https://rx.restorevitality.health/intake?productId=UHJvZHVjdDoxNjU=&programId=erectile_dysfunction&type=intake",
+  "en": {
+   "chips": [
+    "Oral",
+    "Take as needed"
+   ],
+   "card": "Sildenafil and tadalafil together, in one simple tablet.",
+   "price": "$96",
+   "period": "per 4 weeks",
+   "page": "The same two actives as the liposomal, sildenafil and tadalafil, in one tablet taken when you need it. It is our lowest-priced treatment for erectile dysfunction. A licensed provider reviews your health history and decides whether it is right for you, and at what dose.",
+   "benefits": [
+    "Boosts readiness for activity",
+    "Enhances response intensity",
+    "Improves sexual activity"
+   ],
+   "ingredients": [
+    "Sildenafil",
+    "Tadalafil"
+   ]
+  },
+  "es": {
+   "chips": [
+    "Oral",
+    "Según necesidad"
+   ],
+   "card": "Sildenafil y tadalafil juntos, en una tableta sencilla.",
+   "price": "$96",
+   "period": "cada 4 semanas",
+   "page": "Los mismos dos activos que el liposomal, sildenafil y tadalafil, en una tableta que se toma cuando la necesite. Es nuestro tratamiento de menor precio para la disfunción eréctil. Un profesional con licencia revisa su historial de salud y decide si es adecuado para usted y en qué dosis.",
+   "benefits": [
+    "Aumenta la disposición para la actividad",
+    "Intensifica la respuesta",
+    "Mejora la actividad sexual"
+   ],
+   "ingredients": [
+    "Sildenafil",
+    "Tadalafil"
+   ]
+  }
+ },
+ {
+  "slug": "quadruple-powered-liposomal",
+  "name": "Quadruple Powered Liposomal",
+  "category": "mens",
+  "program": "ed",
+  "weeks": 4,
+  "intake": "https://rx.restorevitality.health/intake?productId=UHJvZHVjdDoxOTY=&programId=erectile_dysfunction&type=intake",
+  "en": {
+   "chips": [
+    "Oral",
+    "Take as needed"
+   ],
+   "card": "Our most complete formula, with four actives in one vial.",
+   "price": "$119",
+   "period": "per 4 weeks",
+   "page": "Four actives in one liposomal vial: sildenafil, tadalafil, apomorphine and L-citrulline. It is the most complete formula in the range, taken by mouth when you need it. Because it combines several medications, your provider looks closely at your history and other prescriptions before deciding whether it suits you.",
+   "benefits": [
+    "Comprehensive ED support",
+    "Accelerated absorption rate",
+    "Physical and mental arousal"
+   ],
+   "ingredients": [
+    "Sildenafil",
+    "L-Citrulline",
+    "Tadalafil",
+    "Apomorphine"
+   ]
+  },
+  "es": {
+   "chips": [
+    "Oral",
+    "Según necesidad"
+   ],
+   "card": "Nuestra fórmula más completa, con cuatro activos en un vial.",
+   "price": "$119",
+   "period": "cada 4 semanas",
+   "page": "Cuatro activos en un vial liposomal: sildenafil, tadalafil, apomorfina y L-citrulina. Es la fórmula más completa de la línea y se toma por vía oral cuando la necesite. Como combina varios medicamentos, su profesional revisa con atención su historial y sus otras recetas antes de decidir si le conviene.",
+   "benefits": [
+    "Apoyo integral para la disfunción eréctil",
+    "Absorción más rápida",
+    "Excitación física y mental"
+   ],
+   "ingredients": [
+    "Sildenafil",
+    "L-Citrulina",
+    "Tadalafil",
+    "Apomorfina"
+   ]
+  }
+ },
+ {
+  "slug": "triple-powered-liposomal",
+  "name": "Triple Powered Liposomal",
+  "category": "mens",
+  "program": "ed",
+  "weeks": 4,
+  "intake": "https://rx.restorevitality.health/intake?productId=UHJvZHVjdDoxNjE=&programId=erectile_dysfunction&type=intake",
+  "en": {
+   "chips": [
+    "Oral",
+    "Take as needed"
+   ],
+   "card": "Sildenafil, tadalafil and vardenafil, in one simple vial.",
+   "price": "$109",
+   "period": "per 4 weeks",
+   "page": "Three actives, sildenafil, tadalafil and vardenafil, in one liposomal vial taken by mouth when you need it. A licensed provider reviews your health history and current medications and decides whether it is right for you. If it is prescribed, a partner pharmacy fills it and ships it to you.",
+   "benefits": [
+    "Quick onset of action",
+    "Extended duration benefits",
+    "Reliable multi-ingredient formula"
+   ],
+   "ingredients": [
+    "Sildenafil",
+    "Tadalafil",
+    "Vardenafil"
+   ]
+  },
+  "es": {
+   "chips": [
+    "Oral",
+    "Según necesidad"
+   ],
+   "card": "Sildenafil, tadalafil y vardenafil, en un vial sencillo.",
+   "price": "$109",
+   "period": "cada 4 semanas",
+   "page": "Tres activos, sildenafil, tadalafil y vardenafil, en un vial liposomal que se toma por vía oral cuando lo necesite. Un profesional con licencia revisa su historial de salud y sus medicamentos actuales y decide si es adecuado para usted. Si se lo recetan, una farmacia asociada lo prepara y se lo envía.",
+   "benefits": [
+    "Acción rápida",
+    "Efecto más duradero",
+    "Fórmula confiable de varios ingredientes"
+   ],
+   "ingredients": [
+    "Sildenafil",
+    "Tadalafil",
+    "Vardenafil"
+   ]
+  }
+ },
+ {
+  "slug": "triple-powered-pill",
+  "name": "Triple Powered Pill",
+  "category": "mens",
+  "program": "ed",
+  "weeks": 4,
+  "intake": "https://rx.restorevitality.health/intake?productId=UHJvZHVjdDoxNjQ=&programId=erectile_dysfunction&type=intake",
+  "en": {
+   "chips": [
+    "Oral",
+    "Take as needed"
+   ],
+   "card": "Sildenafil, tadalafil and apomorphine, in one simple tablet.",
+   "price": "$102",
+   "period": "per 4 weeks",
+   "page": "Three actives, sildenafil, tadalafil and apomorphine, in one tablet taken when you need it. A licensed provider reviews your history and current medications first and decides whether it is a fit, and at what dose. If it is prescribed, a partner pharmacy fills it and ships it to you.",
+   "benefits": [
+    "Rapid arousal response",
+    "Prolonged effectiveness",
+    "Central arousal enhancement"
+   ],
+   "ingredients": [
+    "Sildenafil",
+    "Tadalafil",
+    "Apomorphine"
+   ]
+  },
+  "es": {
+   "chips": [
+    "Oral",
+    "Según necesidad"
+   ],
+   "card": "Sildenafil, tadalafil y apomorfina, en una tableta sencilla.",
+   "price": "$102",
+   "period": "cada 4 semanas",
+   "page": "Tres activos, sildenafil, tadalafil y apomorfina, en una tableta que se toma cuando la necesite. Un profesional con licencia revisa primero su historial y sus medicamentos actuales y decide si le conviene y en qué dosis. Si se lo recetan, una farmacia asociada lo prepara y se lo envía.",
+   "benefits": [
+    "Respuesta de excitación rápida",
+    "Efecto prolongado",
+    "Mayor excitación central"
+   ],
+   "ingredients": [
+    "Sildenafil",
+    "Tadalafil",
+    "Apomorfina"
+   ]
+  }
+ },
+ {
+  "slug": "triple-powered-up-liposomal",
+  "name": "Triple Powered Up Liposomal",
+  "category": "mens",
+  "program": "ed",
+  "weeks": 4,
+  "intake": "https://rx.restorevitality.health/intake?productId=UHJvZHVjdDoxNjI=&programId=erectile_dysfunction&type=intake",
+  "en": {
+   "chips": [
+    "Oral",
+    "Take as needed"
+   ],
+   "card": "Sildenafil, tadalafil and apomorphine, in one simple vial.",
+   "price": "$109",
+   "period": "per 4 weeks",
+   "page": "The same three actives as the Triple Powered Pill, sildenafil, tadalafil and apomorphine, in a liposomal vial taken by mouth when you need it. Your provider reviews your health history and decides whether this form or the tablet suits you better.",
+   "benefits": [
+    "Fast-acting liposomal formula",
+    "Prolonged supporting effects",
+    "Enhances central arousal"
+   ],
+   "ingredients": [
+    "Sildenafil",
+    "Tadalafil",
+    "Apomorphine"
+   ]
+  },
+  "es": {
+   "chips": [
+    "Oral",
+    "Según necesidad"
+   ],
+   "card": "Sildenafil, tadalafil y apomorfina, en un vial sencillo.",
+   "price": "$109",
+   "period": "cada 4 semanas",
+   "page": "Los mismos tres activos que la Triple Powered Pill, sildenafil, tadalafil y apomorfina, en un vial liposomal que se toma por vía oral cuando lo necesite. Su profesional revisa su historial de salud y decide si le conviene más esta forma o la tableta.",
+   "benefits": [
+    "Fórmula liposomal de acción rápida",
+    "Efectos de apoyo prolongados",
+    "Mejora la excitación central"
+   ],
+   "ingredients": [
+    "Sildenafil",
+    "Tadalafil",
+    "Apomorfina"
+   ]
+  }
+ },
+ {
+  "slug": "estradiol-cream-progesterone",
+  "name": "Estradiol cream + Progesterone",
+  "category": "womens",
+  "program": "menopause",
+  "weeks": 12,
+  "intake": "https://rx.restorevitality.health/intake?productId=UHJvZHVjdDoxOTI=&programId=whrt&type=intake",
+  "en": {
+   "chips": [
+    "Cream",
+    "Daily"
+   ],
+   "card": "Estradiol and progesterone, one simple application a day.",
+   "price": "$237",
+   "period": "per 12 weeks",
+   "page": "Estradiol applied as a cream once a day, prescribed together with progesterone. It is one of three hormone options in the program, and the choice between cream, patch and tablet is one you make with your provider. Billing is every 12 weeks, so you are not reordering every month.",
+   "benefits": [
+    "Relieves menopause symptoms",
+    "Supports bone health",
+    "Enhances overall well-being"
+   ],
+   "ingredients": [
+    "Estradiol",
+    "Progesterone"
+   ]
+  },
+  "es": {
+   "chips": [
+    "Crema",
+    "Diario"
+   ],
+   "card": "Estradiol y progesterona, una aplicación sencilla al día.",
+   "price": "$237",
+   "period": "cada 12 semanas",
+   "page": "Estradiol en crema, que se aplica una vez al día, recetado junto con progesterona. Es una de las tres opciones hormonales del programa, y la elección entre crema, parche y tableta la toma usted con su profesional. Se cobra cada 12 semanas, así que no tiene que volver a pedir cada mes.",
+   "benefits": [
+    "Alivia los síntomas de la menopausia",
+    "Apoya la salud de los huesos",
+    "Mejora el bienestar general"
+   ],
+   "ingredients": [
+    "Estradiol",
+    "Progesterona"
+   ]
+  }
+ },
+ {
+  "slug": "estradiol-patch-progesterone",
+  "name": "Estradiol patch + Progesterone",
+  "category": "womens",
+  "program": "menopause",
+  "weeks": 12,
+  "intake": "https://rx.restorevitality.health/intake?productId=UHJvZHVjdDoxOTE=&programId=whrt&type=intake",
+  "en": {
+   "chips": [
+    "Patch",
+    "Twice weekly"
+   ],
+   "card": "Estradiol and progesterone, one simple patch twice a week.",
+   "price": "$237",
+   "period": "per 12 weeks",
+   "page": "Estradiol as a patch you change twice a week, prescribed together with progesterone. It contains the same hormones as the cream and the tablet, in a form you only think about twice a week. Your provider reviews your history and symptoms and decides which form and dose suit you.",
+   "benefits": [
+    "Eases menopause discomfort",
+    "Improves mood and sleep",
+    "Maintains bone density"
+   ],
+   "ingredients": [
+    "Estradiol",
+    "Progesterone"
+   ]
+  },
+  "es": {
+   "chips": [
+    "Parche",
+    "Dos veces por semana"
+   ],
+   "card": "Estradiol y progesterona, un parche sencillo dos veces por semana.",
+   "price": "$237",
+   "period": "cada 12 semanas",
+   "page": "Estradiol en un parche que se cambia dos veces por semana, recetado junto con progesterona. Contiene las mismas hormonas que la crema y la tableta, en una forma en la que solo piensa dos veces por semana. Su profesional revisa su historial y sus síntomas y decide qué forma y qué dosis le convienen.",
+   "benefits": [
+    "Alivia las molestias de la menopausia",
+    "Mejora el ánimo y el sueño",
+    "Mantiene la densidad ósea"
+   ],
+   "ingredients": [
+    "Estradiol",
+    "Progesterona"
+   ]
+  }
+ },
+ {
+  "slug": "estradiol-tablet",
+  "name": "Estradiol Tablet",
+  "category": "womens",
+  "program": "menopause",
+  "weeks": 12,
+  "intake": "https://rx.restorevitality.health/intake?productId=UHJvZHVjdDoxOTA=&programId=whrt&type=intake",
+  "en": {
+   "chips": [
+    "Oral",
+    "Daily"
+   ],
+   "card": "Estradiol with progesterone, one simple tablet a day.",
+   "price": "$237",
+   "period": "per 12 weeks",
+   "page": "Estradiol taken as a tablet once a day, with progesterone. Like the cream and the patch, it is billed every 12 weeks. A licensed provider reviews your health history and decides whether hormone therapy is right for you, and in which form.",
+   "benefits": [
+    "Reduces hot flashes",
+    "Protects bone strength",
+    "Supports hormone therapy"
+   ],
+   "ingredients": [
+    "Estradiol",
+    "Progesterone"
+   ]
+  },
+  "es": {
+   "chips": [
+    "Oral",
+    "Diario"
+   ],
+   "card": "Estradiol con progesterona, una tableta sencilla al día.",
+   "price": "$237",
+   "period": "cada 12 semanas",
+   "page": "Estradiol en tableta, una vez al día, con progesterona. Como la crema y el parche, se cobra cada 12 semanas. Un profesional con licencia revisa su historial de salud y decide si la terapia hormonal es adecuada para usted y en qué forma.",
+   "benefits": [
+    "Reduce los bochornos",
+    "Protege la fuerza de los huesos",
+    "Apoya la terapia hormonal"
+   ],
+   "ingredients": [
+    "Estradiol",
+    "Progesterona"
+   ]
+  }
+ },
+ {
+  "slug": "oral-paroxetine",
+  "name": "Oral Paroxetine",
+  "category": "womens",
+  "program": "menopause",
+  "weeks": 12,
+  "intake": "https://rx.restorevitality.health/intake?productId=UHJvZHVjdDoxOTM=&programId=whrt&type=intake",
+  "en": {
+   "chips": [
+    "Oral",
+    "Daily"
+   ],
+   "card": "A non-hormonal option, one simple tablet a day.",
+   "price": "$237",
+   "period": "per 12 weeks",
+   "page": "For women who cannot take hormones, or would rather not. One tablet a day of paroxetine or desvenlafaxine, both non-hormonal. Your provider reviews your history and decides which, if either, is right for you.",
+   "benefits": [
+    "Non-hormonal for hot flashes",
+    "Alleviates mood swings",
+    "Improves sleep quality"
+   ],
+   "ingredients": [
+    "Paroxetine or Desvenlafaxine"
+   ]
+  },
+  "es": {
+   "chips": [
+    "Oral",
+    "Diario"
+   ],
+   "card": "Una opción no hormonal, una tableta sencilla al día.",
+   "price": "$237",
+   "period": "cada 12 semanas",
+   "page": "Para mujeres que no pueden tomar hormonas o prefieren no hacerlo. Una tableta al día de paroxetina o desvenlafaxina, ambas no hormonales. Su profesional revisa su historial y decide cuál es adecuada para usted, si alguna lo es.",
+   "benefits": [
+    "No hormonal, para los bochornos",
+    "Alivia los cambios de humor",
+    "Mejora la calidad del sueño"
+   ],
+   "ingredients": [
+    "Paroxetina o Desvenlafaxina"
+   ]
+  }
+ },
+ {
+  "slug": "oral-semaglutide",
+  "name": "Oral Semaglutide",
+  "category": "shared",
+  "program": "weight",
+  "weeks": 4,
+  "intake": "https://rx.restorevitality.health/intake?productId=UHJvZHVjdDoxNDQ=&programId=macro_dosing_glp&type=intake",
+  "en": {
+   "chips": [
+    "Oral",
+    "Daily"
+   ],
+   "card": "Semaglutide in one dissolvable tablet a day.",
+   "price": "$279",
+   "period": "per 4 weeks",
+   "page": "Semaglutide, a GLP-1 medication, as one dissolvable tablet a day, for people who would rather not inject. Your provider reviews your health history and decides whether it is right for you and how the dose should change over time.",
+   "benefits": [
+    "Stimulates insulin release",
+    "Controls blood sugar spikes",
+    "Curbs appetite effectively"
+   ],
+   "ingredients": [
+    "Semaglutide"
+   ]
+  },
+  "es": {
+   "chips": [
+    "Oral",
+    "Diario"
+   ],
+   "card": "Semaglutida en una tableta soluble al día.",
+   "price": "$279",
+   "period": "cada 4 semanas",
+   "page": "Semaglutida, un medicamento GLP-1, en una tableta soluble al día, para quienes prefieren no inyectarse. Su profesional revisa su historial de salud y decide si es adecuada para usted y cómo ajustar la dosis con el tiempo.",
+   "benefits": [
+    "Estimula la liberación de insulina",
+    "Controla los picos de azúcar en la sangre",
+    "Reduce el apetito de forma eficaz"
+   ],
+   "ingredients": [
+    "Semaglutida"
+   ]
+  }
+ },
+ {
+  "slug": "semaglutide-injections",
+  "name": "Semaglutide Injections",
+  "category": "shared",
+  "program": "weight",
+  "weeks": 4,
+  "intake": "https://rx.restorevitality.health/intake?productId=UHJvZHVjdDoxNDI=&programId=macro_dosing_glp&type=intake",
+  "en": {
+   "chips": [
+    "Injection",
+    "Weekly"
+   ],
+   "card": "Semaglutide in one simple injection a week.",
+   "price": "$249",
+   "period": "per 4 weeks",
+   "page": "Semaglutide as one injection a week, with written and video instructions for doing it yourself at home. Your provider sets your starting dose after reviewing your health history and adjusts it with you over time.",
+   "benefits": [
+    "Enhances insulin response",
+    "Prolongs gastric fullness",
+    "Reduces calorie intake"
+   ],
+   "ingredients": [
+    "Semaglutide"
+   ]
+  },
+  "es": {
+   "chips": [
+    "Inyección",
+    "Semanal"
+   ],
+   "card": "Semaglutida en una inyección sencilla a la semana.",
+   "price": "$249",
+   "period": "cada 4 semanas",
+   "page": "Semaglutida en una inyección a la semana, con instrucciones escritas y en video para aplicarla usted en casa. Su profesional fija la dosis inicial después de revisar su historial de salud y la ajusta con usted con el tiempo.",
+   "benefits": [
+    "Mejora la respuesta a la insulina",
+    "Prolonga la sensación de saciedad",
+    "Reduce el consumo de calorías"
+   ],
+   "ingredients": [
+    "Semaglutida"
+   ]
+  }
+ },
+ {
+  "slug": "tirzepatide-injections",
+  "name": "Tirzepatide Injections",
+  "category": "shared",
+  "program": "weight",
+  "weeks": 4,
+  "intake": "https://rx.restorevitality.health/intake?productId=UHJvZHVjdDoxNDM=&programId=macro_dosing_glp&type=intake",
+  "en": {
+   "chips": [
+    "Injection",
+    "Weekly"
+   ],
+   "card": "Tirzepatide in one simple injection a week.",
+   "price": "$339",
+   "period": "per 4 weeks",
+   "page": "Tirzepatide, which acts on two appetite pathways, as one injection a week. It comes with written and video instructions for injecting at home. Your provider reviews your history and decides whether it is right for you, and at what dose.",
+   "benefits": [
+    "Increases insulin efficiency",
+    "Prolongs stomach fullness",
+    "Promotes appetite suppression"
+   ],
+   "ingredients": [
+    "Tirzepatide"
+   ]
+  },
+  "es": {
+   "chips": [
+    "Inyección",
+    "Semanal"
+   ],
+   "card": "Tirzepatida en una inyección sencilla a la semana.",
+   "price": "$339",
+   "period": "cada 4 semanas",
+   "page": "Tirzepatida, que actúa sobre dos vías del apetito, en una inyección a la semana. Incluye instrucciones escritas y en video para aplicarla en casa. Su profesional revisa su historial y decide si es adecuada para usted y en qué dosis.",
+   "benefits": [
+    "Aumenta la eficacia de la insulina",
+    "Prolonga la saciedad",
+    "Ayuda a reducir el apetito"
+   ],
+   "ingredients": [
+    "Tirzepatida"
+   ]
+  }
+ },
+ {
+  "slug": "semaglutide-microdose-injection",
+  "name": "Semaglutide Microdose Injection",
+  "category": "shared",
+  "program": "micro",
+  "weeks": 4,
+  "intake": "https://rx.restorevitality.health/intake?productId=UHJvZHVjdDoxOTQ=&programId=microdosing_glp&type=intake",
+  "en": {
+   "chips": [
+    "Injection",
+    "Weekly"
+   ],
+   "card": "Low-dose semaglutide for steady, gentle progress.",
+   "price": "$179",
+   "period": "per 4 weeks",
+   "page": "A lower dose of semaglutide, once a week, for steady and gentle progress rather than fast change. The dose is set for you by your provider after reviewing your health history, and it can be adjusted to your goals.",
+   "benefits": [
+    "Supports smooth metabolism",
+    "Reduces appetite gently",
+    "Customizable for personal goals"
+   ],
+   "ingredients": [
+    "Semaglutide"
+   ]
+  },
+  "es": {
+   "chips": [
+    "Inyección",
+    "Semanal"
+   ],
+   "card": "Semaglutida en dosis baja, para un progreso constante y suave.",
+   "price": "$179",
+   "period": "cada 4 semanas",
+   "page": "Una dosis más baja de semaglutida, una vez por semana, para un progreso constante y suave en lugar de un cambio rápido. Su profesional fija la dosis después de revisar su historial de salud y puede ajustarla a sus metas.",
+   "benefits": [
+    "Apoya un metabolismo estable",
+    "Reduce el apetito con suavidad",
+    "Se adapta a sus metas personales"
+   ],
+   "ingredients": [
+    "Semaglutida"
+   ]
+  }
+ },
+ {
+  "slug": "tirzepatide-microdose-injection",
+  "name": "Tirzepatide Microdose Injection",
+  "category": "shared",
+  "program": "micro",
+  "weeks": 4,
+  "intake": "https://rx.restorevitality.health/intake?productId=UHJvZHVjdDoxOTU=&programId=microdosing_glp&type=intake",
+  "en": {
+   "chips": [
+    "Injection",
+    "Weekly"
+   ],
+   "card": "Our most powerful low-dose option for steady results.",
+   "price": "$179",
+   "period": "per 4 weeks",
+   "page": "A lower dose of tirzepatide, which acts on two appetite pathways, once a week. It is the stronger of the two microdose options, at the same price. Your provider reviews your health history and decides whether it suits you, and at what dose.",
+   "benefits": [
+    "Dual pathway hunger control",
+    "Smooth and sustainable results",
+    "Personalized ingredient customization"
+   ],
+   "ingredients": [
+    "Tirzepatide"
+   ]
+  },
+  "es": {
+   "chips": [
+    "Inyección",
+    "Semanal"
+   ],
+   "card": "Nuestra opción de dosis baja más potente, para resultados constantes.",
+   "price": "$179",
+   "period": "cada 4 semanas",
+   "page": "Una dosis más baja de tirzepatida, que actúa sobre dos vías del apetito, una vez por semana. Es la más potente de las dos opciones de microdosis, al mismo precio. Su profesional revisa su historial de salud y decide si le conviene y en qué dosis.",
+   "benefits": [
+    "Control del hambre por dos vías",
+    "Resultados suaves y sostenibles",
+    "Formulación personalizada"
+   ],
+   "ingredients": [
+    "Tirzepatida"
+   ]
+  }
+ },
+ {
+  "slug": "metabolism-boost-injection",
+  "name": "Metabolism Boost Injection (B12 + MIC)",
+  "category": "shared",
+  "program": "longevity",
+  "weeks": 4,
+  "intake": "https://rx.restorevitality.health/intake?productId=UHJvZHVjdDoxNzg=&programId=nad_sermorelin&type=intake",
+  "en": {
+   "chips": [
+    "Injection",
+    "Weekly"
+   ],
+   "card": "B12 with methionine, inositol and choline, once a week.",
+   "price": "$145",
+   "period": "per 4 weeks",
+   "page": "A B12 and MIC injection (methionine, inositol, choline) that pairs B12 energy support with lipotropic compounds that help your body process and metabolize fat. A popular add-on for energy, metabolism and weight-management support.",
+   "benefits": [
+    "B12 for energy support",
+    "Lipotropic compounds to help process fat",
+    "A popular add-on to a weight-management plan"
+   ],
+   "ingredients": [
+    "B12",
+    "Methionine",
+    "Inositol",
+    "Choline"
+   ]
+  },
+  "es": {
+   "chips": [
+    "Inyección",
+    "Semanal"
+   ],
+   "card": "B12 con metionina, inositol y colina, una vez por semana.",
+   "price": "$145",
+   "period": "cada 4 semanas",
+   "page": "Una inyección de B12 y MIC (metionina, inositol, colina) que combina el apoyo energético de la B12 con compuestos lipotrópicos que ayudan al cuerpo a procesar y metabolizar la grasa. Un complemento popular para apoyar la energía, el metabolismo y el control del peso.",
+   "benefits": [
+    "B12 para apoyar la energía",
+    "Compuestos lipotrópicos que ayudan a procesar la grasa",
+    "Un complemento popular para un plan de control de peso"
+   ],
+   "ingredients": [
+    "B12",
+    "Metionina",
+    "Inositol",
+    "Colina"
+   ]
+  }
+ },
+ {
+  "slug": "cellular-recharge-injection",
+  "name": "Cellular Recharge Injection (NAD+)",
+  "category": "shared",
+  "program": "longevity",
+  "weeks": 4,
+  "intake": "https://rx.restorevitality.health/intake?productId=UHJvZHVjdDoxNzQ=&programId=nad_sermorelin&type=intake",
+  "en": {
+   "chips": [
+    "Injection",
+    "Twice weekly"
+   ],
+   "card": "NAD+ delivered directly, in one injection twice a week.",
+   "price": "$199",
+   "period": "per 4 weeks",
+   "page": "A NAD+ injection that delivers this essential coenzyme straight into your system, supporting the cellular energy production, DNA repair and metabolism that naturally decline with age. Injection offers high, direct absorption, a foundational option for energy, focus and recovery.",
+   "benefits": [
+    "Supports cellular energy production",
+    "Supports DNA repair and metabolism",
+    "High, direct absorption"
+   ],
+   "ingredients": [
+    "NAD+"
+   ]
+  },
+  "es": {
+   "chips": [
+    "Inyección",
+    "Dos veces por semana"
+   ],
+   "card": "NAD+ de forma directa, en una inyección dos veces por semana.",
+   "price": "$199",
+   "period": "cada 4 semanas",
+   "page": "Una inyección de NAD+ que lleva esta coenzima esencial directamente a su organismo y apoya la producción de energía celular, la reparación del ADN y el metabolismo, que disminuyen de forma natural con la edad. La inyección ofrece una absorción alta y directa, una opción básica para la energía, la concentración y la recuperación.",
+   "benefits": [
+    "Apoya la producción de energía celular",
+    "Apoya la reparación del ADN y el metabolismo",
+    "Absorción alta y directa"
+   ],
+   "ingredients": [
+    "NAD+"
+   ]
+  }
+ },
+ {
+  "slug": "peak-recovery-injection",
+  "name": "Peak Recovery Injection (Sermorelin)",
+  "category": "shared",
+  "program": "longevity",
+  "weeks": 4,
+  "intake": "https://rx.restorevitality.health/intake?productId=UHJvZHVjdDoxNzc=&programId=nad_sermorelin&type=intake",
+  "en": {
+   "chips": [
+    "Injection"
+   ],
+   "card": "Sermorelin, which supports natural growth hormone production.",
+   "price": "$229",
+   "period": "per 4 weeks",
+   "page": "A sermorelin injection that may support lean muscle maintenance, healthy aging, deeper sleep and steady energy. Typically taken before bed to align with your natural overnight cycle.",
+   "benefits": [
+    "Supports natural growth hormone production",
+    "May support lean muscle and deeper sleep",
+    "Taken before bed, with your overnight cycle"
+   ],
+   "ingredients": [
+    "Sermorelin"
+   ]
+  },
+  "es": {
+   "chips": [
+    "Inyección"
+   ],
+   "card": "Sermorelina, que apoya la producción natural de la hormona del crecimiento.",
+   "price": "$229",
+   "period": "cada 4 semanas",
+   "page": "Una inyección de sermorelina que puede apoyar el mantenimiento de la masa muscular magra, un envejecimiento saludable, un sueño más profundo y una energía estable. Suele aplicarse antes de dormir, en sintonía con su ciclo natural nocturno.",
+   "benefits": [
+    "Apoya la producción natural de la hormona del crecimiento",
+    "Puede apoyar la masa muscular magra y un sueño más profundo",
+    "Se aplica antes de dormir, con su ciclo nocturno"
+   ],
+   "ingredients": [
+    "Sermorelina"
+   ]
+  }
+ },
+ {
+  "slug": "cellular-recharge-nasal-spray",
+  "name": "Cellular Recharge Nasal Spray (NAD+)",
+  "category": "shared",
+  "program": "longevity",
+  "weeks": 4,
+  "intake": "https://rx.restorevitality.health/intake?productId=UHJvZHVjdDoxNzU=&programId=nad_sermorelin&type=intake",
+  "en": {
+   "chips": [
+    "Nasal",
+    "Daily"
+   ],
+   "card": "NAD+ without needles, in one simple spray a day.",
+   "price": "$229",
+   "period": "per 4 weeks",
+   "page": "A NAD+ nasal spray that absorbs through the nasal lining for a convenient, needle-free way to support cellular energy, focus and recovery. An easy daily option for maintaining NAD+ levels between or instead of injections.",
+   "benefits": [
+    "Needle-free",
+    "Supports cellular energy, focus and recovery",
+    "Use between or instead of injections"
+   ],
+   "ingredients": [
+    "NAD+"
+   ]
+  },
+  "es": {
+   "chips": [
+    "Nasal",
+    "Diario"
+   ],
+   "card": "NAD+ sin agujas, en un aerosol sencillo al día.",
+   "price": "$229",
+   "period": "cada 4 semanas",
+   "page": "Un aerosol nasal de NAD+ que se absorbe a través de la mucosa nasal, una forma cómoda y sin agujas de apoyar la energía celular, la concentración y la recuperación. Una opción diaria fácil para mantener sus niveles de NAD+ entre inyecciones o en lugar de ellas.",
+   "benefits": [
+    "Sin agujas",
+    "Apoya la energía celular, la concentración y la recuperación",
+    "Entre inyecciones o en lugar de ellas"
+   ],
+   "ingredients": [
+    "NAD+"
+   ]
+  }
+ },
+ {
+  "slug": "cellular-recharge-liposomal",
+  "name": "Cellular Recharge Liposomal (NAD+, Next-Gen)",
+  "category": "shared",
+  "program": "longevity",
+  "weeks": 4,
+  "intake": "https://rx.restorevitality.health/intake?productId=UHJvZHVjdDoxNzY=&programId=nad_sermorelin&type=intake",
+  "en": {
+   "chips": [
+    "Oral",
+    "Daily"
+   ],
+   "card": "Liposomal NAD+, taken by mouth once a day.",
+   "price": "$229",
+   "period": "per 4 weeks",
+   "page": "A next-gen liposomal NAD+ that wraps the molecule in a protective lipid layer so more survives digestion and reaches your cells than with a standard oral. Supports cellular energy, metabolism and repair in a simple, needle-free daily form.",
+   "benefits": [
+    "Protective lipid layer",
+    "Supports cellular energy, metabolism and repair",
+    "Needle-free, once a day"
+   ],
+   "ingredients": [
+    "NAD+"
+   ]
+  },
+  "es": {
+   "chips": [
+    "Oral",
+    "Diario"
+   ],
+   "card": "NAD+ liposomal, por vía oral una vez al día.",
+   "price": "$229",
+   "period": "cada 4 semanas",
+   "page": "Un NAD+ liposomal de nueva generación que envuelve la molécula en una capa protectora de lípidos, para que más cantidad resista la digestión y llegue a sus células que con un oral común. Apoya la energía celular, el metabolismo y la reparación en una forma diaria sencilla y sin agujas.",
+   "benefits": [
+    "Capa protectora de lípidos",
+    "Apoya la energía celular, el metabolismo y la reparación",
+    "Sin agujas, una vez al día"
+   ],
+   "ingredients": [
+    "NAD+"
+   ]
+  }
+ }
+]

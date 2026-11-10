@@ -1,0 +1,25 @@
+<!-- meta
+title: Encuentre su programa | Restore Vitality Health
+description: Dos preguntas breves le indican el programa de Restore Vitality Health adecuado para usted. Nada de lo que elija se guarda ni se envía.
+-->
+{%- set T = {
+  'title': 'Encuentre **su programa**',
+  'line': 'Dos preguntas breves. Nada de lo que elija se guarda ni se envía: solo le indica el programa adecuado, y un profesional con licencia toma las decisiones médicas.',
+  'start': 'Empezar', 'back': 'Atrás', 'restart': 'Empezar de nuevo',
+  'questions': [
+    {'id': 'q1', 'progress': '.5', 'label': 'Pregunta 1 de 2', 'title': '¿En qué **le podemos ayudar?**',
+     'answers': [['Disfunción eréctil', 'r-ed'], ['Síntomas de la menopausia', 'q2-meno'], ['Peso', 'q2-weight'], ['Energía y envejecimiento saludable', 'r-longevity'], ['Todavía no lo sé', 'r-unsure']]},
+    {'id': 'q2-meno', 'progress': '1', 'label': 'Pregunta 2 de 2', 'title': '¿Consideraría la **terapia hormonal?**',
+     'answers': [['Sí, terapia hormonal', 'r-meno'], ['Prefiero evitar las hormonas', 'r-meno'], ['No lo sé, quiero un consejo', 'r-meno']]},
+    {'id': 'q2-weight', 'progress': '1', 'label': 'Pregunta 2 de 2', 'title': '¿Qué ritmo **le conviene?**',
+     'answers': [['Un programa completo, con la dosis que fije mi profesional', 'r-weight'], ['Una dosis más baja, para un progreso constante y suave', 'r-micro'], ['No lo sé, quiero un consejo', 'r-weight']]}],
+  'results': [
+    {'id': 'r-ed', 'name': 'Disfunción **eréctil**', 'price': 'Desde $96 cada 4 semanas.', 'text': 'Siete tratamientos, en tabletas o viales liposomales, con uno a cuatro activos. Su profesional revisa su historial y le sugiere el adecuado.', 'cta': 'Ver tratamientos', 'href': 'mens-health.html', 'link': None},
+    {'id': 'r-meno', 'name': 'Atención para la **menopausia**', 'price': '$237 cada 12 semanas.', 'text': 'Estradiol en crema, parche o tableta con progesterona, o una tableta no hormonal. Su profesional le ayuda a elegir.', 'cta': 'Ver tratamientos', 'href': 'womens-health.html', 'link': None},
+    {'id': 'r-weight', 'name': 'Pérdida de **peso** médica', 'price': 'Desde $249 cada 4 semanas.', 'text': 'Semaglutida en tableta diaria o inyección semanal, o tirzepatida en inyección semanal, con la dosis que fije su profesional.', 'cta': 'Ver tratamientos', 'href': 'shared-treatments.html#group-weight', 'link': None},
+    {'id': 'r-micro', 'name': '**Microdosis** de GLP-1', 'price': '$179 cada 4 semanas.', 'text': 'Una dosis semanal más baja de semaglutida o tirzepatida, para un progreso constante y suave.', 'cta': 'Ver tratamientos', 'href': 'shared-treatments.html#group-micro', 'link': None},
+    {'id': 'r-longevity', 'name': '**Longevidad**', 'price': 'Desde $145 cada 4 semanas.', 'text': 'NAD+ en inyección, aerosol nasal o liposomal, sermorelina o una inyección semanal de B12, para la energía, la concentración y la recuperación.', 'cta': 'Ver tratamientos', 'href': 'shared-treatments.html#group-longevity', 'link': None},
+    {'id': 'r-unsure', 'name': 'Todavía no lo **sé**', 'price': '', 'text': 'No hay problema. Vea todos los programas y precios en un solo lugar, o escríbanos y le orientamos.', 'cta': 'Ver todos los precios', 'href': 'pricing.html', 'link': ['Contáctenos', 'contact.html']}],
+  'note': 'Un profesional con licencia toma la decisión final después de su consulta.'
+} %}
+{% include "partials/page-quiz.html" %}

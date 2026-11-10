@@ -1,0 +1,281 @@
+{#- Shared blocks. Every page imports these through tools/build.py, so markup lives once. -#}
+
+{#- headline system (site standard 2): every heading a macro renders keeps one bold word. A title marked with
+   **word** renders as written; an unmarked title bolds its last word, so no macro heading is ever all light. -#}
+{%- macro hx(t) -%}
+{%- if '**' in t -%}{{ t|hl }}
+{%- else -%}{%- set w = t.rsplit(' ', 1) -%}{{ ((w[0] ~ ' **' ~ w[1] ~ '**') if w|length == 2 else ('**' ~ t ~ '**'))|hl }}
+{%- endif -%}
+{%- endmacro %}
+
+{%- macro lang_switch() -%}
+<div class="m-langSwitch" role="group" aria-label="{{ S.lang_group }}">
+  {%- if S.lang == 'en' %}
+  <a class="m-langSwitch__link" href="{{ page }}" lang="en" hreflang="en" aria-current="true">EN</a>
+  <a class="m-langSwitch__link" href="es/{{ page }}" lang="es" hreflang="es">ES<span class="sr-only"> (Español)</span></a>
+  {%- else %}
+  <a class="m-langSwitch__link" href="../{{ page }}" lang="en" hreflang="en">EN<span class="sr-only"> (English)</span></a>
+  <a class="m-langSwitch__link" href="{{ page }}" lang="es" hreflang="es" aria-current="true">ES</a>
+  {%- endif %}
+</div>
+{%- endmacro %}
+
+{%- macro button(label, href, variant='-gold', ext=False, cls='') -%}
+<a class="a-button {{ variant }}{{ ' ' ~ cls if cls }}" href="{{ href }}"{% if ext %} target="_blank" rel="noopener"{% endif %}>
+  <span class="a-button__label">{{ label }}</span>
+  <svg class="a-svg a-button__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+  {%- if ext %}<span class="sr-only">{{ S.new_tab }}</span>{% endif %}
+</a>
+{%- endmacro %}
+
+{%- macro text_link(label, href, cls='') -%}
+<a class="a-textLink{{ ' ' ~ cls if cls }}" href="{{ href }}">{{ label }}<svg class="a-svg" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+{%- endmacro %}
+
+{%- macro img(name, sizes, alt='', cls='', lazy=True, width_override=None) -%}
+{%- set ws = media[name] -%}
+<img{% if cls %} class="{{ cls }}"{% endif %} src="{{ ROOT }}assets/images/veins/{{ name }}-{{ ws[0][0] }}.webp" srcset="{% for w, h in ws %}{{ ROOT }}assets/images/veins/{{ name }}-{{ w }}.webp {{ w }}w{{ ', ' if not loop.last }}{% endfor %}" sizes="{{ sizes }}" width="{{ ws[0][0] }}" height="{{ ws[0][1] }}" alt="{{ alt }}"{% if lazy %} loading="lazy"{% else %} fetchpriority="high"{% endif %} decoding="async">
+{%- endmacro %}
+
+{%- macro safety(cls='m-safety') -%}
+<p class="{{ cls }}">{{ S.safety }} <a class="a-inline" href="medications-safety-information.html">{{ S.safety_link }}</a></p>
+{%- endmacro %}
+
+{#- lit plum tile (R2): product photo centred on a plum-lift ground with a warm glow and contact shadow, never larger than its pixels -#}
+{#- sizes: the tile's real rendered width; a full-bleed photo (.is-photo) fills the card, so cards pass their own sizes -#}
+{%- macro lit_tile(p, cls='', big=False, sizes='280px') -%}
+{%- if product_art.product_img is defined -%}
+<div class="m-litTile{{ ' -big' if big }}{{ ' ' ~ cls if cls }}">{{ product_art.product_img(p.slug, cls='m-litTile__img', sizes=sizes) }}</div>
+{%- else -%}
+{{ product_art(p, cls) }}
+{%- endif -%}
+{%- endmacro %}
+
+{%- macro photo_cell(slot, cls='m-photoCell', sizes='(min-width: 1025px) 40vw, 90vw') -%}
+{%- if product_art.photo is defined -%}<div class="{{ cls }}" aria-hidden="true">{{ product_art.photo(slot, sizes, cls='m-photoCell__img', lazy=True) }}</div>{%- endif -%}
+{%- endmacro %}
+
+{%- macro step_media(slug) -%}
+{%- if product_art.photo is defined -%}{{ product_art.photo('step-' ~ slug|replace('follow-up', 'followup'), '(min-width: 1025px) 40vw, 90vw', cls='m-step__photo', lazy=True) }}{%- else -%}{{ step_art(slug) }}{%- endif -%}
+{%- endmacro %}
+
+{#- treatment card (The Protocole, site standard): 4:5 product photo full-bleed (or the lit tile for a cut-out), caps title,
+   at most two hairline chips, two lines, price on a baseline, one primary pill and one text link. Nothing else. -#}
+{%- macro card(p, hl='h3', sizes='(min-width: 1441px) 27.5vw, (min-width: 641px) 394px, 330px') -%}
+{%- set t = p[S.lang] -%}
+<article class="m-card">
+  <div class="m-card__media">
+    {{ lit_tile(p, sizes=sizes) }}
+  </div>
+  <{{ hl }} class="m-card__title t-card"><a href="{{ p.slug }}.html">{{ p.name }}</a></{{ hl }}>
+  <ul class="m-card__chips">
+    {%- for c in t.chips %}
+    <li class="a-chip -meta">{{ c }}</li>
+    {%- endfor %}
+  </ul>
+  <p class="m-card__text">{{ t.card }}</p>
+  <p class="m-card__price"><span class="m-card__amount">{{ t.price }}</span> <span class="m-card__period">{{ t.period }}</span></p>
+  <div class="m-card__actions">
+    {{ button(S.card_cta, p.intake, ext=True) }}
+    {{ text_link(S.card_more, p.slug ~ '.html') }}
+  </div>
+</article>
+{%- endmacro %}
+
+{#- credibility row: four statements; four across from 1025, a 2x2 grid below (critic site r2: no marquee) -#}
+{%- macro cred() -%}
+<div class="o-cred">
+  <ul class="o-cred__list">
+    {%- for title, text in S.cred %}
+    <li class="o-cred__item">
+      <p class="o-cred__title">{{ title }}</p>
+      <p class="o-cred__text">{{ text }}</p>
+    </li>
+    {%- endfor %}
+  </ul>
+</div>
+{%- endmacro %}
+
+{#- closing CTA band: centred, one button, the veined R at 7%. photo: the photos.json slot (the per-page photo map
+   passes its own; band-closing when none is given) -#}
+{%- macro closing(title=None, text=None, label=None, href='quiz.html', ext=False, photo='band-closing') -%}
+<section class="o-closing{{ ' -photo' if product_art.photo is defined }}" aria-labelledby="closing-title" data-photo="{{ photo or 'band-closing' }}" data-sticky-stop>
+  {%- if product_art.photo is defined %}
+  <div class="o-closing__photo" aria-hidden="true">{{ product_art.photo(photo or 'band-closing', '100vw', cls='o-closing__img', lazy=True) }}</div>
+  {%- endif %}
+  <img class="o-closing__glyph" src="{{ ROOT }}assets/images/brand/rvh-r-glyph-520.webp" width="520" height="629" alt="" loading="lazy" decoding="async">
+  <h2 class="o-closing__title" id="closing-title">{{ hx(title or S.closing_title) }}</h2>
+  <p class="o-closing__text">{{ text or S.closing_text }}</p>
+  {{ button(label or S.find_program, href, ext=ext) }}
+</section>
+{%- endmacro %}
+
+{#- quiz entry (site standard, 10 Nov): a centred text link, not a cream block; one of the four allowed CTA kinds -#}
+{%- macro quiz_row(text=None, cls='') -%}
+<p class="m-quizLine{{ ' ' ~ cls if cls }}">{{ text_link(text or S.quiz_row, 'quiz.html') }}</p>
+{%- endmacro %}
+
+{%- macro faq_items(items) -%}
+<div class="m-faqList">
+  {%- for q, a in items %}
+  <details class="m-faqItem">
+    <summary class="m-faqItem__q">{{ q }}<span class="m-faqItem__icon" aria-hidden="true"></span></summary>
+    <p class="m-faqItem__a">{{ a|linkify }}</p>
+  </details>
+  {%- endfor %}
+</div>
+{%- endmacro %}
+
+{#- FAQ band (The Protocole's split). groups: list of [tab name, items]; one group shows no tabs -#}
+{%- macro faq(id, heading, groups, more=None, light='-light', h='h2') -%}
+<section class="o-band {{ light }} o-faq" aria-labelledby="{{ id }}-title" data-header-theme="light">
+  <div class="o-faq__layout">
+    <{{ h }} class="o-faq__heading t-h2" id="{{ id }}-title">{{ hx(heading) }}</{{ h }}>
+    <div>
+      {%- if groups|length > 1 %}
+      <div class="o-faq__tabs" role="tablist" aria-labelledby="{{ id }}-title" data-tabs>
+        {%- for name, items in groups %}
+        <button class="o-faq__tab" type="button" role="tab" id="{{ id }}-tab-{{ loop.index }}" aria-controls="{{ id }}-panel-{{ loop.index }}" aria-selected="{{ 'true' if loop.first else 'false' }}">{{ name }}</button>
+        {%- endfor %}
+      </div>
+      {%- for name, items in groups %}
+      <div class="o-faq__panel" role="tabpanel" id="{{ id }}-panel-{{ loop.index }}" aria-labelledby="{{ id }}-tab-{{ loop.index }}">
+        {{ faq_items(items) }}
+      </div>
+      {%- endfor %}
+      {%- else %}
+      {{ faq_items(groups[0][1]) }}
+      {%- endif %}
+      {%- if more %}
+      <p class="o-faq__more">{{ text_link(more[0], more[1]) }}</p>
+      {%- endif %}
+    </div>
+  </div>
+</section>
+{%- endmacro %}
+
+{#- banner(title, text, crop, kind='split', photo=None): the page's h1. Three kinds (critic site r2, Medium 9; 'cover' added 11 Nov):
+   'split'  content pages (categories, pricing, how it works, about, faq, 404): plum half with the title and line,
+            photo half from photo or the crop's slot; the bar is solid plum-deep from load and the photo starts under it.
+   'text'   utility pages (quiz, resources, legal): cream, no photo, the header turns plum over it.
+   Same title size (--fs-h1) and left edge (the gutter) in both. Extra content (the 404 actions) goes in a call block:
+   {% call banner(...) %}...{% endcall %}. -#}
+{#- 'cover'  the three category pages (Varun, 11 Nov: "give me something unique ... i dont like the way the text is
+            just too close to the top left or top as a whole leaves the whole hero blank"). An editorial cover on
+            plum: the title split around an inset photo, its first part above the frame and the rest below, both
+            lines very large and each overlapping the frame's edge like a masthead; the line and one next step
+            (cta: [label, href], an anchor to the grid) under it, all centred on one axis. The frame sits inside
+            the title (an aria-hidden span), so the h1 still reads "Men's health". On load the lines slide in from
+            opposite sides and the photo settles; on scroll they drift apart and the photo eases larger (global.js).
+            Reduced motion: static and complete. -#}
+{%- macro cover_lines(t) -%}
+{%- set src = t if '**' in t else ((t.rsplit(' ', 1)[0] ~ ' **' ~ t.rsplit(' ', 1)[1] ~ '**') if ' ' in t else ('**' ~ t ~ '**')) -%}
+{%- set ns = namespace(parts=[]) -%}
+{%- for seg in src.split('**') -%}
+{%- if seg.strip() %}{% set ns.parts = ns.parts + [[seg.strip(), loop.index0 % 2 == 1]] %}{% endif -%}
+{%- endfor -%}
+{{- caller(ns.parts[0], ns.parts[1:]) -}}
+{%- endmacro %}
+{%- macro cover_part(part) -%}
+{%- if part[1] %}<strong>{{ part[0] }}</strong>{% else %}{{ part[0] }}{% endif -%}
+{%- endmacro %}
+{#- cover_sizes(slot): the cover frame is 50vw x 40svh from 1025 and 76vw x 40svh from 641, and the photo covers it,
+   so on screens narrower than the photo's own ratio allows it is drawn by height (40vh x the ratio), not by width.
+   The ratio is read from the slot's own img tag (data/photos.json), and every value carries 5% for the scroll ease
+   that takes the frame to 1.05 (global.js). Final leftovers, 11 Nov: men's was 1.04x and shared 1.34x at 768. -#}
+{%- macro cover_sizes(slot) -%}
+{%- set tag = (product_art.photo(slot, '')|string).split('<img')[-1] -%}
+{%- set r = (tag.split(' width="')[1].split('"')[0]|float) / (tag.split(' height="')[1].split('"')[0]|float) -%}
+{%- set tall = (40 * r * 1.05)|round(1) -%}
+(min-width: 1025px) and (max-aspect-ratio: {{ (r * 800)|round|int }}/1000) {{ tall }}vh, (min-width: 1025px) 52.5vw, (min-width: 641px) and (max-aspect-ratio: {{ (r * 40000 / 76)|round|int }}/1000) {{ tall }}vh, (min-width: 641px) 80vw, calc(100vw - 32px)
+{%- endmacro %}
+{%- macro banner(title, text, crop, kind='split', photo=None, lang=None, cta=None) -%}
+{%- if kind == 'cover' %}
+{%- set slots = {'mens': 'banner-mens', 'womens': 'banner-womens', 'shared': 'banner-shared'} -%}
+<section class="o-catCover" data-kind="cover" data-banner="{{ crop }}" aria-labelledby="page-title" data-cover>
+  <h1 class="o-catCover__title" id="page-title"{{ (' lang="' ~ lang ~ '"')|safe if lang }}>
+    {%- call(first, rest) cover_lines(title) %}
+    <span class="o-catCover__line -top" data-cover-line="-1"><span class="o-catCover__lineIn">{{ cover_part(first) }}</span></span>
+    {{ ' ' }}<span class="o-catCover__frame" aria-hidden="true" data-cover-frame><span class="o-catCover__settle">{{ product_art.photo(photo or slots[crop], cover_sizes(photo or slots[crop]), cls='o-catCover__img', lazy=False) }}</span></span>
+    {{ ' ' }}<span class="o-catCover__line -bottom" data-cover-line="1"><span class="o-catCover__lineIn">{% for part in rest %}{{ ' ' if not loop.first }}{{ cover_part(part) }}{% endfor %}</span></span>
+    {%- endcall %}
+  </h1>
+  <div class="o-catCover__more">
+    {%- if text %}
+    <p class="o-catCover__text">{{ text|linkify }}</p>
+    {%- endif %}
+    {%- if cta %}
+    <div class="o-catCover__actions">{{ button(cta[0], cta[1], cls='-down') }}</div>
+    {%- endif %}
+  </div>
+</section>
+{%- elif kind == 'text' %}
+<section class="o-banner -text" data-kind="text" aria-labelledby="page-title" data-header-theme="light"{% if caller is defined %} data-sticky-stop{% endif %}>
+  <h1 class="o-banner__title" id="page-title"{{ (' lang="' ~ lang ~ '"')|safe if lang }}>{{ hx(title) }}</h1>
+  {%- if text %}
+  <p class="o-banner__text">{{ text|linkify }}</p>
+  {%- endif %}
+  {%- if caller is defined %}{{ caller() }}{% endif %}
+</section>
+{%- else %}
+{%- set slots = {'mens': 'banner-mens', 'womens': 'banner-womens', 'shared': 'banner-shared', 'about': 'band-about', 'how': 'banner-how', 'faq': 'banner-faq', 'pricing': 'banner-pricing', '404': 'page-404'} -%}
+<section class="o-banner -split" data-kind="split" data-banner="{{ crop }}" aria-labelledby="page-title"{% if caller is defined %} data-sticky-stop{% endif %}>
+  {%- if (photo or crop in slots) and product_art.photo is defined %}
+  {#- sizes (final leftovers, 11 Nov): the 3:2 photos (how, faq, pricing) cover a half that is at least 52rem minus
+     the bar tall from 1025, so up to 1400 they are drawn about 674px wide however narrow 50vw is (1.05x at 1280
+     before); under 1025 the frame is 62vh tall, so on portrait tablets they are drawn 93vh wide. The portrait
+     photos (about, 404) always cover by width. -#}
+  {%- set wide = crop in ('how', 'faq', 'pricing') %}
+  <div class="o-banner__media -photo" aria-hidden="true">{{ product_art.photo(photo or slots[crop], ('(min-width: 1025px) and (max-width: 1400px) 700px, (min-width: 1025px) 50vw, (min-width: 641px) and (max-aspect-ratio: 93/100) 93vh, 100vw' if wide else '(min-width: 1025px) 50vw, 100vw'), cls='o-banner__photo', lazy=False) }}</div>
+  {%- elif crop in ('mens', 'womens', 'shared') %}
+  <div class="o-banner__media -art" aria-hidden="true">{{ program_art(crop) }}</div>
+  {%- elif media['rvh-banner-' ~ crop] is defined %}
+  <div class="o-banner__media" aria-hidden="true">
+    {{ img('rvh-banner-' ~ crop, '(min-width: 1025px) 920px, 770px', lazy=False) }}
+  </div>
+  {%- endif %}
+  <h1 class="o-banner__title" id="page-title"{{ (' lang="' ~ lang ~ '"')|safe if lang }}>{{ hx(title) }}</h1>
+  {%- if text %}
+  <p class="o-banner__text">{{ text|linkify }}</p>
+  {%- endif %}
+  {%- if caller is defined %}{{ caller() }}{% endif %}
+</section>
+{%- endif %}
+{%- endmacro %}
+
+{%- macro intro(id, title, text, h='h2', cls='') -%}
+<div class="m-intro{{ ' ' ~ cls if cls }}">
+  <{{ h }} class="t-h2" id="{{ id }}" data-reveal>{{ hx(title) }}</{{ h }}>
+  {%- if text %}
+  <p class="m-intro__text t-lead" data-reveal-follow>{{ text }}</p>
+  {%- endif %}
+</div>
+{%- endmacro %}
+
+{#- light=True: on a cream band (plum pill, light field), so a page never runs three dark bands in a row -#}
+{#- form_only=True: the sign-up form alone, for a block whose own sentence already says what it is (Resources) -#}
+{%- macro newsletter(id='newsletter', light=False, form_only=False) -%}
+{%- set N = S.newsletter -%}
+<div class="o-newsletter__inner{{ ' -formOnly' if form_only }}">
+  {%- if not form_only %}
+  <h2 class="t-h2" id="{{ id }}-title">{{ hx(N.title) }}</h2>
+  <p class="o-newsletter__text t-lead">{{ N.text }}</p>
+  {%- endif %}
+  <form class="m-inlineForm{{ '' if light else ' -onDark' }}" novalidate data-form data-msg-required="{{ S.form.required }}" data-msg-email="{{ S.form.email }}" data-msg-sending="{{ S.form.sending }}" data-msg-error="{{ S.form.error }}" data-msg-success="{{ N.success }}">
+    <input type="hidden" name="form" value="newsletter">
+    <input type="hidden" name="language" value="{{ S.lang }}">
+    <div class="m-inlineForm__row">
+      <div class="m-field">
+        <label class="m-field__label" for="{{ id }}-email">{{ N.label }}</label>
+        <input class="m-field__input" id="{{ id }}-email" name="email" type="email" autocomplete="email" required aria-describedby="{{ id }}-email-error">
+        <p class="m-field__error" id="{{ id }}-email-error"></p>
+      </div>
+      <div class="m-field">
+        <span class="m-field__label" aria-hidden="true">&nbsp;</span>
+        <button class="a-button {{ '-plum' if light else '-gold' }}" type="submit"><span class="a-button__label">{{ N.button }}</span><svg class="a-svg a-button__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      </div>
+    </div>
+    <p class="m-formStatus" role="status" tabindex="-1" data-form-status></p>
+  </form>
+</div>
+{%- endmacro %}

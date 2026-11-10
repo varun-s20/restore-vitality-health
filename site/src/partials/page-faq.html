@@ -1,0 +1,23 @@
+{#- FAQ page (spec 2b, site standard 10 Nov). The homepage FAQ's split, one row per theme: the theme name on the
+    gutter, its questions on the 40% line. Every question shows on one page (no tabs), so a visitor can scan or
+    search all of them; the homepage keeps the pill tabs for its four-question teaser. The page source sets T. -#}
+{#- one bold word per theme head (site standard 2), the same words, no rewording -#}
+{%- set BOLD = {'Getting started': 'Getting **started**', 'Prescriptions and safety': 'Prescriptions and **safety**', 'Billing': '**Billing**', 'Privacy': '**Privacy**',
+  'Primeros pasos': 'Primeros **pasos**', 'Recetas y seguridad': 'Recetas y **seguridad**', 'Pagos': '**Pagos**', 'Privacidad': '**Privacidad**'} -%}
+<div class="t-faq">
+
+{{ banner(T.title, T.line, 'faq', kind='split') }}
+
+<!-- ===== FAQ: all questions, by theme ===== -->
+<div class="o-band -light o-faqPage" data-header-theme="light">
+  {%- for name, items in faq_themes %}
+  <section class="o-faqPage__group" aria-labelledby="faq-theme-{{ loop.index }}">
+    <h2 class="o-faqPage__theme t-h3" id="faq-theme-{{ loop.index }}">{{ (BOLD[name] if name in BOLD else name)|hl }}</h2>
+    {{ faq_items(items) }}
+  </section>
+  {%- endfor %}
+</div>
+
+{{ closing(photo='band-closing-info') }}
+
+</div>

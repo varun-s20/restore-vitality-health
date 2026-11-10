@@ -1,0 +1,118 @@
+{#- Legal page template: the client's text verbatim (assets/legal/existing-site-legal.md), one reading column.
+    Spanish pages show the English text under a Spanish note, lang="en" on the text, until the client supplies
+    Spanish legal text (copy-es.md, Legal pages).
+    Site standard (10 Nov): The Protocole's split. The title and a contents list on the gutter, the text on the 40%
+    line at 68ch. build.py marks every short line without closing punctuation as a heading; the rules below only
+    change how a line is shown, never its words: empty lines (zero-width joiners) are dropped, the first heading
+    is hidden when it repeats the H1, "Last updated" lines read as a date line, bullet lines and the short
+    symptom or step lists become list items, sentence fragments and address lines stay paragraphs, and only the
+    main sections (NAV, or every heading not in SUB) are H2s in the contents list. -#}
+{%- set NAV = {
+  'medications-safety-information': ['Compound Semaglutide Safety Information', 'Compound Tirzepatide Safety Information', 'Testosterone', 'Enclomiphene', 'Anastrozole -', 'Zepbound® (tirzepatide) Safety Information', 'Wegovy® (Semaglutide) Safety Information', 'Mounjaro® (tirzepatide) Safety Information', 'Ozempic® (semaglutide) Safety Information', 'Contact Us'],
+} -%}
+{%- set SUB = {
+  'terms': ['Availability', 'Business address'],
+  'do-not-sell': ['Using our Cookie Settings to manage your cookie preferences', 'Disabling analytics cookies in your browser settings'],
+} -%}
+{%- set ITEMS = ['Type 1 or type 2 diabetes', 'Thyroid cancer', 'Gastrointestinal disease', 'Pancreatitis', 'Kidney disease', 'Diabetic retinopathy', 'Depression', 'Suicidal thoughts or behavior',
+  'Nausea', 'Diarrhea', 'Vomiting', 'Constipation', 'Stomach pain', 'Indigestion', 'Injection site reactions', 'Feeling tired', 'Allergic reactions', 'Belching', 'Hair loss',
+  'Abdominal pain', 'Headache', 'Fatigue', 'Dyspepsia', 'Dizzyness', 'Abdominal distension', 'Eructation', 'Hypoglycemia in patients with type 2 diabetes', 'Flatulence', 'Gastroenteritis', 'Gastroesophageal reflux disease',
+  'Alcohol swabs', 'Sharps container for needle disposal', 'Cotton ball or gauze',
+  'Have low testosterone with correlating symptoms', 'Want to preserve fertility', 'Want to avoid testosterone products, including injections',
+  'Appointment reminders', 'Medication fulfillment and shipment updates', 'Refill reminders', 'Communications related to my care or payment for care', 'Patient feedback requests', 'General health and wellness information',
+  'Cloud infrastructure providers - to host and deliver our services'] -%}
+{%- set TITLES = ['Website Privacy Policy', 'Restore Vitality Health - Terms of Use'] -%}
+{%- set PARA_START = ('Automated System', 'Des Moines', 'Support:', 'Contact Novo Nordisk', 'Contact FDA MedWatch', 'Other products for weight loss') -%}
+{%- set es = L == 'es' -%}
+
+{#- pass 1: one row per shown line, with its role -#}
+{%- set rows = [] -%}
+{%- for kind, raw in Lp.blocks -%}
+  {%- set t = raw|replace('‍', '')|trim -%}
+  {%- set nxt = (Lp.blocks[loop.index][1]|replace('‍', '')|trim) if not loop.last else '' -%}
+  {%- if not t or (loop.first and t == Lp.h1) -%}
+  {%- elif kind == 'optout' -%}{%- set _ = rows.append({'role': 'optout', 't': t}) -%}
+  {%- elif t.startswith('Last updated') or t.startswith('Last Updated') or t.startswith('Last modified') -%}{%- set _ = rows.append({'role': 'meta', 't': t}) -%}
+  {%- elif t.startswith('· ') -%}{%- set _ = rows.append({'role': 'li', 't': t[2:]}) -%}
+  {%- elif kind == 'p' -%}{%- set _ = rows.append({'role': 'p', 't': t}) -%}
+  {%- elif t in TITLES -%}{%- set _ = rows.append({'role': 'doctitle', 't': t}) -%}
+  {%- elif t in ITEMS -%}{%- set _ = rows.append({'role': 'li', 't': t}) -%}
+  {%- elif t[0].islower() or t[0] == '(' or t.endswith('.') or '@' in t or (t[0].isdigit() and '. ' not in t[:4]) or (nxt and nxt[0].islower()) -%}{%- set _ = rows.append({'role': 'p', 't': t}) -%}
+  {%- elif t.startswith(PARA_START) -%}{%- set _ = rows.append({'role': 'p', 't': t}) -%}
+  {%- elif Lp.slug in NAV -%}{%- set _ = rows.append({'role': 'h2' if t in NAV[Lp.slug] else 'h3', 't': t, 'id': 'sec-' ~ loop.index}) -%}
+  {%- elif t in SUB.get(Lp.slug, []) -%}{%- set _ = rows.append({'role': 'h3', 't': t}) -%}
+  {%- else -%}{%- set _ = rows.append({'role': 'h2', 't': t, 'id': 'sec-' ~ loop.index}) -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- set heads = rows|selectattr('role', 'equalto', 'h2')|list -%}
+
+{%- macro toc_list() -%}
+<ol class="o-legal__tocList"{% if es %} lang="en"{% endif %}>
+  {%- for r in heads %}
+  <li><a class="o-legal__tocLink" href="#{{ r.id }}">{{ r.t }}</a></li>
+  {%- endfor %}
+</ol>
+{%- endmacro %}
+
+{#- critic fix pass (10 Nov): the utility banner (cream, no photo) carries the title and the first "Last updated"
+    line (in Spanish, the English-only note); the contents list follows as a
+    plum band under the banner (columns at 1025 and up, a fold on phones), and the text runs on the gutter at 68ch,
+    so the page reads as a document, not as the FAQ's split -#}
+{%- set metas = rows|selectattr('role', 'equalto', 'meta')|list -%}
+{%- set lead_meta = metas[0].t if metas and not es else '' -%}
+{%- set es_note = 'Este documento legal está disponible solo en inglés por ahora. Si tiene preguntas, escríbanos a support@rx.restorevitality.health.' -%}
+<div class="t-legal">
+{{ banner(Lp.h1, es_note if es else lead_meta, 'legal', kind='text', lang='en' if es else None) }}
+{%- if heads|length > 1 %}
+<!-- the contents list as the plum band under the cream banner (an index, as on How it works), so cream never meets cream -->
+<nav class="o-band -plum o-legal__index" aria-label="{{ 'En esta página' if es else 'On this page' }}">
+  <details class="o-legal__toc -phone">
+    <summary class="o-legal__tocSummary t-label">{{ 'En esta página' if es else 'On this page' }}<span class="m-faqItem__icon" aria-hidden="true"></span></summary>
+    {{ toc_list() }}
+  </details>
+  <div class="o-legal__toc -desk">
+    <p class="o-legal__tocLabel t-label" aria-hidden="true">{{ 'En esta página' if es else 'On this page' }}</p>
+    {{ toc_list() }}
+  </div>
+</nav>
+{%- endif %}
+<section class="o-reading o-legal" aria-label="{{ Lp.h1 }}" data-header-theme="light" data-sticky-stop>
+  <div class="o-legal__layout">
+    <div class="o-legal__body">
+      {%- if es %}
+      <!-- CLIENT COPY REQUIRED: Spanish legal text (the English-only note shows in the banner) -->
+      {%- endif %}
+      <div class="m-legal"{% if es %} lang="en"{% endif %}>
+        {%- for r in rows %}
+        {%- set prev = loop.previtem.role if not loop.first else '' %}
+        {%- set next = loop.nextitem.role if not loop.last else '' %}
+        {%- if r.role == 'li' %}
+        {%- if prev != 'li' %}
+        <ul class="m-legal__list">{% endif %}
+          <li>{{ r.t }}</li>
+        {%- if next != 'li' %}
+        </ul>{% endif %}
+        {%- elif r.role == 'h2' %}
+        <h2 id="{{ r.id }}">{{ r.t }}</h2>
+        {%- elif r.role == 'h3' %}
+        <h3>{{ r.t }}</h3>
+        {%- elif r.role == 'meta' %}
+        {%- if r.t != lead_meta %}
+        <p class="m-legal__meta">{{ r.t }}</p>
+        {%- endif %}
+        {%- elif r.role == 'doctitle' %}
+        <p class="m-legal__doc">{{ r.t }}</p>
+        {%- elif r.role == 'optout' %}
+        <p><button type="button" data-cookie-open>{{ r.t }}</button></p>
+        {%- else %}
+        <p>{{ r.t }}</p>
+        {%- endif %}
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ closing(photo='band-closing-utility') }}
+
+</div>

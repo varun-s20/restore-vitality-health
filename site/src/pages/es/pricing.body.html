@@ -1,0 +1,40 @@
+<!-- meta
+title: Precios | Restore Vitality Health
+description: Todos los precios de Restore Vitality Health en un solo lugar, desde $96 cada 4 semanas. Un precio por periodo incluye la revisión, el medicamento si se receta y el apoyo.
+-->
+{%- set T = {
+  'title': '**Precios**',
+  'line': 'Un precio por periodo de cobro, visible antes de empezar, en cada programa que ofrecemos.',
+  'from': 'Desde',
+  'cards': [
+    {'key': 'men', 'pill': 'Salud masculina', 'name': 'Salud **masculina**', 'blurb': 'Siete tratamientos para la disfunción eréctil, en tabletas o viales liposomales.', 'price': '$96', 'period': 'cada 4 semanas', 'cta': 'Ver tratamientos', 'href': 'mens-health.html',
+     'programs': ['Disfunción eréctil, de $96 a $119 cada 4 semanas']},
+    {'key': 'women', 'pill': 'Salud femenina', 'name': 'Salud **femenina**', 'blurb': 'Atención para la menopausia, con opciones hormonales y no hormonales.', 'price': '$237', 'period': 'cada 12 semanas', 'cta': 'Ver tratamientos', 'href': 'womens-health.html',
+     'programs': ['Terapia hormonal para la menopausia, $237 cada 12 semanas', 'Opción no hormonal, $237 cada 12 semanas']},
+    {'key': 'shared', 'pill': 'Para todos', 'name': '**Para todos**', 'blurb': 'Pérdida de peso, microdosis de GLP-1 y longevidad, para hombres y mujeres.', 'price': '$145', 'period': 'cada 4 semanas', 'cta': 'Ver tratamientos', 'href': 'shared-treatments.html',
+     'programs': ['Pérdida de peso médica, de $249 a $339 cada 4 semanas', 'Microdosis de GLP-1, $179 cada 4 semanas', 'Longevidad, de $145 a $229 cada 4 semanas']}],
+  'includes': 'Todos los planes incluyen',
+  'include_items': ['Revisión de un profesional con licencia en su estado', 'Su medicamento, si su profesional se lo receta', 'Apoyo en línea a través de Mi portal'],
+  'covers_title': 'Qué incluye **su precio**',
+  'covers_body': 'Su precio es un solo monto por cada periodo de cobro. Incluye la revisión de un profesional con licencia en su estado, su medicamento si se lo recetan y apoyo en línea. Según su plan y su elegibilidad médica, también puede incluir consultas de seguimiento, coordinación de la atención, servicios de laboratorio y acceso a una línea de apoyo al paciente las 24 horas.',
+  'not_included': 'No incluye',
+  'not_items': ['Los cargos de envío y procesamiento, que se muestran antes de completar su pedido', 'Servicios de empresas externas, como un laboratorio aparte, que pueden cobrarle directamente', 'Facturación al seguro: nuestros planes se pagan de forma privada'],
+  'billing_title': 'Cómo **se cobra**',
+  'billing': [
+    ['Cuándo se le cobra', 'al completar su formulario, por su primer periodo de cobro.'],
+    ['Renovación', 'su plan se renueva automáticamente cada 4 o 12 semanas, al precio que vio al inscribirse, hasta que cancele.'],
+    ['Cancelación', 'en cualquier momento, por correo o en su cuenta, al menos 72 horas antes de su próxima fecha de cobro.'],
+    ['Reembolsos', 'reembolso total si un profesional determina que no es candidato por razones médicas, o si cancela dentro de las primeras 72 horas sin haber recibido ningún servicio. Los medicamentos con receta no se pueden devolver una vez pedidos.']],
+  'compare_title': 'Compare **los programas**',
+  'cols': ['Programa', 'Grupo', 'Formas', 'Se cobra cada', 'Desde'],
+  'rows': [
+    ['Disfunción eréctil', 'Salud masculina', 'Tableta, vial liposomal', '4 semanas', '$96', 'mens-health.html'],
+    ['Menopausia', 'Salud femenina', 'Crema, parche, tableta', '12 semanas', '$237', 'womens-health.html'],
+    ['Pérdida de peso médica', 'Para todos', 'Tableta, inyección semanal', '4 semanas', '$249', 'shared-treatments.html'],
+    ['Microdosis de GLP-1', 'Para todos', 'Inyección semanal', '4 semanas', '$179', 'shared-treatments.html'],
+    ['Longevidad', 'Para todos', 'Inyección, aerosol nasal, liposomal', '4 semanas', '$145', 'shared-treatments.html']],
+  'see': 'Ver tratamientos',
+  'caption': 'Programas de Restore Vitality Health comparados por grupo, formas, periodo de cobro y precio inicial',
+  'faq': 'Preguntas sobre **pagos**'
+} %}
+{% include "partials/page-pricing.html" %}

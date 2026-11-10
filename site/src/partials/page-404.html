@@ -1,0 +1,11 @@
+{#- 404 (spec 2b, critic fix pass 10 Nov): the content pages' split banner (photo half) at full height, with one gold
+    pill and one text link under the line (banner's caller slot). The follow-up photo (an older couple on a coastal
+    path) sits beside it; no product, price or claim is on this page. -#}
+<div class="t-404">
+{% call banner(T.title, T.line, '404', kind='split') %}
+  <div class="o-banner__actions">
+    {{ button(T.home, 'index.html') }}
+    {{ text_link(S.find_program, 'quiz.html') }}
+  </div>
+{% endcall %}
+</div>

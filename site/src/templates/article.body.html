@@ -1,0 +1,22 @@
+{#- Article template (spec 2b: the resources reading column, body 18px/1.6, pull headings 28px caps).
+    Not built into a page yet: no articles exist (copy.md, Resources). When the client supplies them, add
+    data/articles.json entries (slug, title, standfirst, date, minutes, category, body_html) and a loop in
+    tools/build.py like the treatment pages; strings below are from the copy deck.
+    Meta title: {Article title} | Restore Vitality Health. Meta description: the standfirst, up to 155 characters. -#}
+{%- set es = L == 'es' -%}
+<div class="t-article">
+<article class="o-reading" aria-labelledby="page-title" data-header-theme="light">
+  <div class="o-reading__col -narrow">
+    <p class="a-chip -meta -onLight">{{ a.category }}</p>
+    <h1 class="o-reading__title" id="page-title">{{ a.title }}</h1>
+    <p class="o-reading__stand">{{ a.standfirst }}</p>
+    <p class="o-article__meta">{{ ('Publicado el ' if es else 'Published ') ~ a.date }} / {{ a.minutes }} {{ 'min de lectura' if es else 'min read' }}</p>
+    <div class="o-article__body">{{ a.body_html|safe }}</div>
+    <p class="o-article__note">{{ 'Este artículo es informativo y no sustituye el consejo médico. Hable con un profesional con licencia sobre su propia salud.' if es else 'This article is for general information and is not medical advice. Talk to a licensed provider about your own health.' }}</p>
+    <p class="o-article__nav">
+      {%- if a.next %}{{ text_link('Siguiente artículo' if es else 'Next article', a.next ~ '.html') }}{% endif %}
+      {{ text_link('Todos los recursos' if es else 'All resources', 'resources.html') }}
+    </p>
+  </div>
+</article>
+</div>

@@ -1,0 +1,114 @@
+<!-- ===== Header partial: sprite, skip link, header, menu. Opens and closes its own elements. ===== -->
+{%- macro sub_tile(p) -%}
+{%- if product_img is defined -%}{{ product_img(p.slug, cls='m-subnav__img', sizes='(max-width: 640px) 45vw, 170px') }}{%- else -%}<span class="m-subnav__glow" aria-hidden="true"></span>{%- endif -%}
+{%- endmacro %}
+<svg width="0" height="0" class="sr-only" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow" viewBox="0 0 16 16"><path d="M2 8h11.5M9 3.5 13.5 8 9 12.5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 18 18"><path d="M2 6h14M2 12h9"/></symbol>
+  <symbol id="i-close" viewBox="0 0 18 18"><path d="M4 4l10 10M14 4 4 14"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 16 16"><path d="M6 3.5 10.5 8 6 12.5"/></symbol>
+  <!-- the seam glyph: one vein of the "R", drawn as a line for the step chips -->
+  <symbol id="i-seam" viewBox="0 0 18 18"><path d="M3 15c2.2-1.6 3-3.4 3.6-5.6.5-1.9 1.3-3.6 3.1-4.6M10 9.6c1.6.4 3 1.4 4.9 3.4"/></symbol>
+  <!-- the five care steps (How it works): drawn in the same 1.5 line as the arrow -->
+  <symbol id="i-step-consult" viewBox="0 0 24 24"><path d="M14.5 3H6.5v18h11V6z"/><path d="M14.5 3v3h3"/><path d="M9 10.5h6M9 13.5h6M9 16.5h3.5"/></symbol>
+  <symbol id="i-step-labs" viewBox="0 0 24 24"><path d="M8.5 3h7"/><path d="M10 3v13.5a2 2 0 0 0 4 0V3"/><path d="M10 11h4"/></symbol>
+  <symbol id="i-step-plan" viewBox="0 0 24 24"><path d="M9 4.5H6.5V21h11V4.5H15"/><path d="M9 3h6v3H9z"/><path d="m9.5 13.5 2 2 3.5-4"/></symbol>
+  <symbol id="i-step-delivery" viewBox="0 0 24 24"><path d="M4 7.8 12 3.5l8 4.3v8.4l-8 4.3-8-4.3z"/><path d="M4 7.8 12 12l8-4.2M12 12v8.5"/><path d="m8 5.6 8 4.3"/></symbol>
+  <symbol id="i-step-followup" viewBox="0 0 24 24"><path d="M19.5 12A7.5 7.5 0 0 1 6.4 17"/><path d="M4.5 12a7.5 7.5 0 0 1 13.1-5"/><path d="M17.8 3.5V7h-3.5M6.2 20.5V17h3.5"/></symbol>
+</svg>
+<a class="a-skipLink" href="#main">{{ S.skip }}</a>
+
+<header class="o-header" data-header>
+  <div class="o-header__sheet" aria-hidden="true"></div>
+  <div class="o-header__inner">
+    <div class="o-header__side">
+      <button class="a-navPill" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-open>
+        <svg class="a-svg" aria-hidden="true"><use href="#i-menu"/></svg>
+        <span class="a-navPill__label">{{ S.menu }}</span>
+      </button>
+      <nav class="o-header__nav" aria-label="{{ S.nav_main }}">
+        <ul class="o-header__list">
+          {%- set sub_cats = ['mens', 'womens', 'shared'] %}
+          {%- set sub_more = ["See men's treatments", "See women's treatments", "See shared treatments"] if L == 'en' else ['Ver tratamientos', 'Ver tratamientos', 'Ver tratamientos'] %}
+          {%- for href, label in S.nav_inline %}
+          {%- set cat = sub_cats[loop.index0] %}
+          <li class="o-header__item" data-submenu>
+            <a class="a-navLink" href="{{ href }}" data-submenu-link>{{ label }}</a>
+            <button class="a-navToggle" type="button" aria-expanded="false" aria-controls="sub-{{ cat }}" data-submenu-trigger><span class="sr-only">{{ label }}</span><svg class="a-svg" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+            <div class="m-subnav" id="sub-{{ cat }}" data-submenu-panel>
+              <ul class="m-subnav__list">
+              {%- for p in by_cat(cat) %}
+                <li><a class="m-subnav__card" href="{{ p.slug }}.html"><span class="m-subnav__media -lit">{{ sub_tile(p) }}</span><span class="m-subnav__name">{{ p[L].name if p[L].name is defined else p.name }}</span><span class="m-subnav__meta">{{ p[L].price }} {{ p[L].period }}</span></a></li>
+              {%- endfor %}
+              </ul>
+              <div class="m-subnav__foot">
+                <a class="a-textLink" href="{{ href }}">{{ sub_more[loop.index0] }}<svg class="a-svg" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                <p class="m-subnav__note">{{ S.disclaimer[1] }}</p>
+              </div>
+            </div>
+          </li>
+          {%- endfor %}
+        </ul>
+      </nav>
+    </div>
+
+    <a class="o-header__logo" href="index.html">
+      <img class="-onDark" src="{{ ROOT }}assets/images/brand/rvh-lockup-cream-306.webp" srcset="{{ ROOT }}assets/images/brand/rvh-lockup-cream-153.webp 153w, {{ ROOT }}assets/images/brand/rvh-lockup-cream-306.webp 306w" sizes="(min-width: 1441px) 8.7vw, (min-width: 1025px) 124px, (min-width: 641px) 105px, (min-width: 401px) 96px, 86px" width="306" height="128" alt="{{ S.logo_alt }}">
+      <img class="-onLight" src="{{ ROOT }}assets/images/brand/rvh-lockup-plum-306.webp" srcset="{{ ROOT }}assets/images/brand/rvh-lockup-plum-153.webp 153w, {{ ROOT }}assets/images/brand/rvh-lockup-plum-306.webp 306w" sizes="(min-width: 1441px) 8.7vw, (min-width: 1025px) 124px, (min-width: 641px) 105px, (min-width: 401px) 96px, 86px" width="306" height="128" alt="" loading="lazy" decoding="async">
+    </a>
+
+    <div class="o-header__side -right">
+      {{ lang_switch() }}
+      <a class="a-navLink o-header__portal" href="https://rx.restorevitality.health/patient-portal" target="_blank" rel="noopener">{{ S.portal }}<span class="sr-only">{{ S.new_tab }}</span></a>
+      <a class="a-button -outline -small" href="quiz.html">{{ S.get_started }}</a>
+    </div>
+  </div>
+</header>
+
+<div class="o-menu" id="site-menu" data-menu>
+  <div class="o-menu__scrim" data-menu-close></div>
+  <div class="o-menu__panel" role="dialog" aria-modal="true" aria-label="{{ S.menu_label }}" data-menu-panel>
+    <div class="o-menu__top">
+      <button class="a-navPill" type="button" data-menu-close>
+        <svg class="a-svg" aria-hidden="true"><use href="#i-close"/></svg>
+        <span class="a-navPill__label">{{ S.close }}</span>
+      </button>
+    </div>
+    <nav aria-label="{{ S.nav_all }}">
+      <ul class="o-menu__list" data-accordion>
+        {%- set acc_cats = ['mens', 'womens', 'shared'] %}
+        {%- set acc_more = ["See men's treatments", "See women's treatments", "See shared treatments"] if L == 'en' else ['Ver tratamientos', 'Ver tratamientos', 'Ver tratamientos'] %}
+        {%- for href, label in S.nav_menu %}
+        {%- if loop.index0 < 3 %}
+        {%- set cat = acc_cats[loop.index0] %}
+        <li class="o-menu__group">
+          <button class="o-menu__link -toggle" type="button" aria-expanded="false" aria-controls="menu-{{ cat }}" data-accordion-trigger>{{ label }}<svg class="a-svg o-menu__chevron" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+          <div class="o-menu__sub" id="menu-{{ cat }}" data-accordion-panel>
+            <div class="o-menu__subInner">
+              <a class="a-textLink" href="{{ href }}">{{ acc_more[loop.index0] }}<svg class="a-svg" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <ul class="o-menu__grid">
+              {%- for p in by_cat(cat) %}
+                <li><a class="m-drawerCard" href="{{ p.slug }}.html"><span class="m-drawerCard__media m-subnav__media -lit">{{ sub_tile(p) }}</span><span class="m-drawerCard__name">{{ p.name }}</span></a></li>
+              {%- endfor %}
+              </ul>
+            </div>
+          </div>
+        </li>
+        {%- else %}
+        <li><a class="o-menu__link" href="{{ href }}">{{ label }}</a></li>
+        {%- endif %}
+        {%- endfor %}
+      </ul>
+    </nav>
+    <div class="o-menu__extra">
+      {{ lang_switch() }}
+      <a class="a-navLink" href="https://rx.restorevitality.health/patient-portal" target="_blank" rel="noopener">{{ S.portal }}<span class="sr-only">{{ S.new_tab }}</span></a>
+    </div>
+    <div class="o-menu__quiz">
+      <p class="o-menu__quizTitle">{{ S.quiz_title }}</p>
+      <p class="o-menu__quizText">{{ S.quiz_text }}</p>
+      {{ button(S.take_quiz, 'quiz.html') }}
+    </div>
+  </div>
+</div>
+<!-- ===== /Header partial ===== -->

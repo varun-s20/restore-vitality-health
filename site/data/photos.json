@@ -1,0 +1,1845 @@
+{
+ "photos": {
+  "hero": {
+   "files": [
+    [
+     640,
+     425
+    ],
+    [
+     960,
+     637
+    ],
+    [
+     1280,
+     849
+    ],
+    [
+     1600,
+     1061
+    ],
+    [
+     2400,
+     1592
+    ]
+   ],
+   "focus": "69% 60%",
+   "alt_en": "An older couple sitting on a bench on a stone terrace, looking out at the sea",
+   "alt_es": "Una pareja mayor sentada en un banco de una terraza de piedra, mirando el mar"
+  },
+  "hero-phone": {
+   "files": [
+    [
+     640,
+     1138
+    ],
+    [
+     960,
+     1708
+    ],
+    [
+     1280,
+     2277
+    ],
+    [
+     1600,
+     2846
+    ]
+   ],
+   "focus": "45% 62%",
+   "alt_en": "An older couple sitting on a bench on a stone terrace, looking out at the sea",
+   "alt_es": "Una pareja mayor sentada en un banco de una terraza de piedra, mirando el mar"
+  },
+  "band-quiz": {
+   "files": [
+    [
+     640,
+     378
+    ],
+    [
+     960,
+     567
+    ],
+    [
+     1280,
+     756
+    ],
+    [
+     1600,
+     945
+    ],
+    [
+     2400,
+     1418
+    ]
+   ],
+   "focus": "52% 70%",
+   "alt_en": "Two hikers on a grassy clifftop path above a wide blue bay, with sea cliffs behind",
+   "alt_es": "Dos excursionistas en un sendero de hierba sobre los acantilados, frente a una amplia bahía azul"
+  },
+  "band-quiz-phone": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ]
+   ],
+   "focus": "50% 70%",
+   "alt_en": "Two hikers on a grassy clifftop path above a wide blue bay, with sea cliffs behind",
+   "alt_es": "Dos excursionistas en un sendero de hierba sobre los acantilados, frente a una amplia bahía azul"
+  },
+  "band-about": {
+   "files": [
+    [
+     640,
+     960
+    ],
+    [
+     960,
+     1440
+    ],
+    [
+     1280,
+     1920
+    ],
+    [
+     1600,
+     2400
+    ],
+    [
+     2400,
+     3600
+    ]
+   ],
+   "focus": "45% 80%",
+   "alt_en": "An older couple sitting on a rock by a mountain lake, seen from behind",
+   "alt_es": "Una pareja mayor sentada en una roca junto a un lago de montaña, vista de espaldas"
+  },
+  "band-about-phone": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2000
+    ],
+    [
+     2400,
+     2999
+    ]
+   ],
+   "focus": "45% 76%",
+   "alt_en": "An older couple sitting on a rock by a mountain lake, seen from behind",
+   "alt_es": "Una pareja mayor sentada en una roca junto a un lago de montaña, vista de espaldas"
+  },
+  "band-contact": {
+   "files": [
+    [
+     640,
+     427
+    ],
+    [
+     960,
+     641
+    ],
+    [
+     1280,
+     854
+    ],
+    [
+     1600,
+     1068
+    ],
+    [
+     2400,
+     1602
+    ]
+   ],
+   "focus": "55% 25%",
+   "alt_en": "Hands holding a phone while relaxing on a sofa at home",
+   "alt_es": "Unas manos sosteniendo un teléfono, descansando en el sofá de casa"
+  },
+  "band-contact-phone": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "focus": "50% 25%",
+   "alt_en": "Hands holding a phone while relaxing on a sofa at home",
+   "alt_es": "Unas manos sosteniendo un teléfono, descansando en el sofá de casa"
+  },
+  "band-closing": {
+   "files": [
+    [
+     640,
+     427
+    ],
+    [
+     960,
+     640
+    ],
+    [
+     1280,
+     853
+    ],
+    [
+     1600,
+     1067
+    ],
+    [
+     2400,
+     1600
+    ]
+   ],
+   "focus": "65% 50%",
+   "alt_en": "A couple walking together along the coast at sunset",
+   "alt_es": "Una pareja caminando junta por la costa al atardecer"
+  },
+  "band-closing-phone": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ]
+   ],
+   "focus": "50% 50%",
+   "alt_en": "A couple walking together along the coast at sunset",
+   "alt_es": "Una pareja caminando junta por la costa al atardecer"
+  },
+  "band-newsletter": {
+   "files": [
+    [
+     640,
+     427
+    ],
+    [
+     960,
+     640
+    ],
+    [
+     1280,
+     853
+    ],
+    [
+     1600,
+     1067
+    ],
+    [
+     2400,
+     1600
+    ]
+   ],
+   "focus": "70% 55%",
+   "alt_en": "A couple on a white terrace watching the sun set over the sea",
+   "alt_es": "Una pareja en una terraza blanca contemplando la puesta de sol sobre el mar"
+  },
+  "band-newsletter-phone": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ]
+   ],
+   "focus": "50% 55%",
+   "alt_en": "A couple on a white terrace watching the sun set over the sea",
+   "alt_es": "Una pareja en una terraza blanca contemplando la puesta de sol sobre el mar"
+  },
+  "banner-mens": {
+   "files": [
+    [
+     640,
+     393
+    ],
+    [
+     960,
+     589
+    ],
+    [
+     1280,
+     786
+    ],
+    [
+     1600,
+     982
+    ],
+    [
+     2400,
+     1473
+    ]
+   ],
+   "focus": "49% 67%",
+   "alt_en": "A grey-haired man walking away along a rocky shore path toward the sea",
+   "alt_es": "Un hombre de cabello canoso caminando por un sendero de rocas hacia el mar, visto de espaldas"
+  },
+  "banner-mens-phone": {
+   "files": [
+    [
+     640,
+     1138
+    ],
+    [
+     960,
+     1707
+    ],
+    [
+     1280,
+     2276
+    ],
+    [
+     1600,
+     2845
+    ]
+   ],
+   "focus": "50% 62%",
+   "alt_en": "A grey-haired man walking away along a rocky shore path toward the sea",
+   "alt_es": "Un hombre de cabello canoso caminando por un sendero de rocas hacia el mar, visto de espaldas"
+  },
+  "banner-womens": {
+   "files": [
+    [
+     640,
+     554
+    ],
+    [
+     960,
+     831
+    ],
+    [
+     1280,
+     1108
+    ],
+    [
+     1600,
+     1386
+    ],
+    [
+     2400,
+     2078
+    ]
+   ],
+   "focus": "67% 0%",
+   "alt_en": "A white-haired woman in a pale blue sweater standing at the edge of the sea, seen from behind",
+   "alt_es": "Una mujer de cabello blanco con un jersey azul claro de pie a la orilla del mar, vista de espaldas"
+  },
+  "banner-womens-phone": {
+   "files": [
+    [
+     640,
+     1138
+    ],
+    [
+     960,
+     1707
+    ]
+   ],
+   "focus": "50% 0%",
+   "alt_en": "A white-haired woman in a pale blue sweater standing at the edge of the sea, seen from behind",
+   "alt_es": "Una mujer de cabello blanco con un jersey azul claro de pie a la orilla del mar, vista de espaldas"
+  },
+  "banner-shared": {
+   "files": [
+    [
+     640,
+     307
+    ],
+    [
+     960,
+     461
+    ],
+    [
+     1280,
+     615
+    ],
+    [
+     1600,
+     768
+    ],
+    [
+     2400,
+     1152
+    ]
+   ],
+   "focus": "50% 58%",
+   "alt_en": "An older couple walking a winding path through golden hillside scrub, seen from behind",
+   "alt_es": "Una pareja mayor caminando por un sendero sinuoso entre matorrales dorados, vista de espaldas"
+  },
+  "banner-shared-phone": {
+   "files": [
+    [
+     640,
+     1138
+    ],
+    [
+     960,
+     1707
+    ],
+    [
+     1280,
+     2277
+    ]
+   ],
+   "focus": "50% 47%",
+   "alt_en": "An older couple walking a winding path through golden hillside scrub, seen from behind",
+   "alt_es": "Una pareja mayor caminando por un sendero sinuoso entre matorrales dorados, vista de espaldas"
+  },
+  "people-mens": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2001
+    ]
+   ],
+   "focus": "50% 55%",
+   "alt_en": "An older couple's hands clasped together on a wooden table",
+   "alt_es": "Las manos de una pareja mayor entrelazadas sobre una mesa de madera"
+  },
+  "people-womens": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2000
+    ],
+    [
+     2400,
+     2999
+    ]
+   ],
+   "focus": "45% 70%",
+   "alt_en": "A woman sleeping peacefully in a white bed by a bright window",
+   "alt_es": "Una mujer durmiendo tranquila en una cama blanca junto a una ventana luminosa"
+  },
+  "people-shared": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "focus": "50% 50%",
+   "alt_en": "A grey-haired man cycling down a gravel country road, seen from behind",
+   "alt_es": "Un hombre de cabello canoso en bicicleta por un camino rural de grava, visto de espaldas"
+  },
+  "people-mens-treat": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2000
+    ],
+    [
+     2400,
+     2999
+    ]
+   ],
+   "focus": "55% 74%",
+   "alt_en": "An older couple holding hands in a garden in the evening",
+   "alt_es": "Una pareja mayor tomada de la mano en un jardín al atardecer"
+  },
+  "people-womens-treat": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2001
+    ]
+   ],
+   "focus": "50% 62%",
+   "alt_en": "A hand holding a cup of tea on a soft blanket in bed",
+   "alt_es": "Una mano sosteniendo una taza de té sobre una manta suave, en la cama"
+  },
+  "people-shared-treat": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "focus": "50% 50%",
+   "alt_en": "An older couple hiking a mountain trail with backpacks and walking poles, seen from behind",
+   "alt_es": "Una pareja mayor haciendo senderismo por un camino de montaña con mochilas y bastones, vista de espaldas"
+  },
+  "quiz-mens": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2001
+    ]
+   ],
+   "focus": "50% 58%",
+   "alt_en": "Two hands held together, both in warm camel coats",
+   "alt_es": "Dos manos entrelazadas, ambas con abrigos color camel"
+  },
+  "quiz-womens": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2000
+    ],
+    [
+     2400,
+     2999
+    ]
+   ],
+   "focus": "55% 50%",
+   "alt_en": "A woman with short fair hair kneeling on a yoga mat at home, seen from behind",
+   "alt_es": "Una mujer de cabello corto y rubio arrodillada sobre una esterilla de yoga en casa, vista de espaldas"
+  },
+  "quiz-shared": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2000
+    ],
+    [
+     2400,
+     3000
+    ]
+   ],
+   "focus": "55% 55%",
+   "alt_en": "A couple cycling along a path through green dunes in the evening",
+   "alt_es": "Una pareja paseando en bicicleta por un camino entre dunas verdes al atardecer"
+  },
+  "quiz-unsure": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2000
+    ],
+    [
+     2400,
+     3000
+    ]
+   ],
+   "focus": "50% 57%",
+   "alt_en": "A hand holding a cup and saucer by a window in morning light",
+   "alt_es": "Una mano sosteniendo una taza con su plato junto a una ventana, con luz de la mañana"
+  },
+  "quiz-start": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "focus": "50% 45%",
+   "alt_en": "Hands holding a phone, tapping an answer",
+   "alt_es": "Unas manos sosteniendo un teléfono, eligiendo una respuesta"
+  },
+  "about-block": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "focus": "50% 50%",
+   "alt_en": "A pharmacist counting yellow tablets on a steel counting tray",
+   "alt_es": "Un farmacéutico contando comprimidos amarillos en una bandeja de recuento de acero"
+  },
+  "about-privacy": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "focus": "50% 50%",
+   "alt_en": "Hands typing on a laptop at a quiet desk by a window, a phone beside them",
+   "alt_es": "Unas manos escribiendo en un portátil en un escritorio tranquilo junto a una ventana, con un teléfono al lado"
+  },
+  "resources-photo": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "focus": "50% 55%",
+   "alt_en": "A cup of coffee beside an open book on a white linen tablecloth",
+   "alt_es": "Una taza de café junto a un libro abierto sobre un mantel de lino blanco"
+  },
+  "band-closing-home": {
+   "files": [
+    [
+     640,
+     291
+    ],
+    [
+     960,
+     436
+    ],
+    [
+     1280,
+     582
+    ],
+    [
+     1600,
+     727
+    ],
+    [
+     2400,
+     1091
+    ]
+   ],
+   "focus": "80% 45%",
+   "alt_en": "Late sun shining on small waves at the edge of a sandy beach",
+   "alt_es": "El sol de la tarde brillando sobre las olas en la orilla de una playa de arena"
+  },
+  "band-closing-home-phone": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "focus": "50% 44%",
+   "alt_en": "Late sun shining on small waves at the edge of a sandy beach",
+   "alt_es": "El sol de la tarde brillando sobre las olas en la orilla de una playa de arena"
+  },
+  "band-closing-mens": {
+   "files": [
+    [
+     640,
+     291
+    ],
+    [
+     960,
+     436
+    ],
+    [
+     1280,
+     582
+    ],
+    [
+     1600,
+     727
+    ],
+    [
+     2400,
+     1091
+    ]
+   ],
+   "focus": "20% 60%",
+   "alt_en": "A lone swimmer far out in a sea lit gold by the evening sun",
+   "alt_es": "Un nadador solitario mar adentro, en un mar dorado por el sol de la tarde"
+  },
+  "band-closing-mens-phone": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "focus": "50% 79%",
+   "alt_en": "A lone swimmer far out in a sea lit gold by the evening sun",
+   "alt_es": "Un nadador solitario mar adentro, en un mar dorado por el sol de la tarde"
+  },
+  "band-closing-womens": {
+   "files": [
+    [
+     640,
+     291
+    ],
+    [
+     960,
+     436
+    ],
+    [
+     1280,
+     582
+    ],
+    [
+     1600,
+     727
+    ],
+    [
+     2400,
+     1091
+    ]
+   ],
+   "focus": "20% 55%",
+   "alt_en": "A woman wading into a calm, still sea at sunset, seen from behind",
+   "alt_es": "Una mujer entrando en un mar tranquilo al atardecer, vista de espaldas"
+  },
+  "band-closing-womens-phone": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ]
+   ],
+   "focus": "50% 78%",
+   "alt_en": "A woman wading into a calm, still sea at sunset, seen from behind",
+   "alt_es": "Una mujer entrando en un mar tranquilo al atardecer, vista de espaldas"
+  },
+  "band-closing-shared": {
+   "files": [
+    [
+     640,
+     291
+    ],
+    [
+     960,
+     436
+    ],
+    [
+     1280,
+     582
+    ],
+    [
+     1600,
+     727
+    ],
+    [
+     2400,
+     1091
+    ]
+   ],
+   "focus": "20% 50%",
+   "alt_en": "The sun setting over the sea, seen through dune grass on a quiet beach",
+   "alt_es": "El sol poniéndose sobre el mar, visto entre la hierba de las dunas de una playa tranquila"
+  },
+  "band-closing-shared-phone": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "focus": "50% 66%",
+   "alt_en": "The sun setting over the sea, seen through dune grass on a quiet beach",
+   "alt_es": "El sol poniéndose sobre el mar, visto entre la hierba de las dunas de una playa tranquila"
+  },
+  "band-closing-info": {
+   "files": [
+    [
+     640,
+     291
+    ],
+    [
+     960,
+     436
+    ],
+    [
+     1280,
+     582
+    ],
+    [
+     1600,
+     727
+    ],
+    [
+     2400,
+     1091
+    ]
+   ],
+   "focus": "82% 40%",
+   "alt_en": "A quiet living room in low sun, light pouring through a tall window past an armchair and sofa",
+   "alt_es": "Un salón tranquilo con el sol bajo entrando por una ventana alta, junto a un sillón y un sofá"
+  },
+  "band-closing-info-phone": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "focus": "50% 39%",
+   "alt_en": "A quiet living room in low sun, light pouring through a tall window past an armchair and sofa",
+   "alt_es": "Un salón tranquilo con el sol bajo entrando por una ventana alta, junto a un sillón y un sofá"
+  },
+  "band-closing-utility": {
+   "files": [
+    [
+     640,
+     291
+    ],
+    [
+     960,
+     436
+    ],
+    [
+     1280,
+     582
+    ],
+    [
+     1600,
+     727
+    ],
+    [
+     2400,
+     1091
+    ]
+   ],
+   "focus": "22% 50%",
+   "alt_en": "A single chair on a sunny stone terrace above the sea",
+   "alt_es": "Una silla sola en una soleada terraza de piedra sobre el mar"
+  },
+  "band-closing-utility-phone": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1601
+    ],
+    [
+     1600,
+     2001
+    ]
+   ],
+   "focus": "50% 75%",
+   "alt_en": "A single chair on a sunny stone terrace above the sea",
+   "alt_es": "Una silla sola en una soleada terraza de piedra sobre el mar"
+  },
+  "banner-pricing": {
+   "files": [
+    [
+     640,
+     427
+    ],
+    [
+     960,
+     640
+    ],
+    [
+     1280,
+     853
+    ],
+    [
+     1600,
+     1067
+    ],
+    [
+     2400,
+     1600
+    ]
+   ],
+   "focus": "50% 45%",
+   "alt_en": "Hands holding a payment card beside a laptop and a notebook",
+   "alt_es": "Unas manos sosteniendo una tarjeta de pago junto a un portátil y un cuaderno"
+  },
+  "banner-pricing-phone": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1601
+    ],
+    [
+     1600,
+     2001
+    ]
+   ],
+   "focus": "50% 45%",
+   "alt_en": "Hands holding a payment card beside a laptop and a notebook",
+   "alt_es": "Unas manos sosteniendo una tarjeta de pago junto a un portátil y un cuaderno"
+  },
+  "banner-faq": {
+   "files": [
+    [
+     640,
+     427
+    ],
+    [
+     960,
+     640
+    ],
+    [
+     1280,
+     853
+    ],
+    [
+     1600,
+     1067
+    ],
+    [
+     2400,
+     1600
+    ]
+   ],
+   "focus": "50% 45%",
+   "alt_en": "Hands holding a tablet on a white sofa",
+   "alt_es": "Unas manos sosteniendo una tableta en un sofá blanco"
+  },
+  "banner-faq-phone": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "focus": "50% 45%",
+   "alt_en": "Hands holding a tablet on a white sofa",
+   "alt_es": "Unas manos sosteniendo una tableta en un sofá blanco"
+  },
+  "banner-how": {
+   "files": [
+    [
+     640,
+     427
+    ],
+    [
+     960,
+     641
+    ],
+    [
+     1280,
+     854
+    ],
+    [
+     1600,
+     1068
+    ],
+    [
+     2400,
+     1602
+    ]
+   ],
+   "focus": "45% 45%",
+   "alt_en": "A sunlit table at home with a cup of tea, a notebook and pen, a teapot and a basket of berries",
+   "alt_es": "Una mesa soleada en casa con una taza de té, un cuaderno y un bolígrafo, una tetera y una cesta de bayas"
+  },
+  "banner-how-phone": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1201
+    ],
+    [
+     1280,
+     1601
+    ],
+    [
+     1600,
+     2001
+    ]
+   ],
+   "focus": "50% 45%",
+   "alt_en": "A sunlit table at home with a cup of tea, a notebook and pen, a teapot and a basket of berries",
+   "alt_es": "Una mesa soleada en casa con una taza de té, un cuaderno y un bolígrafo, una tetera y una cesta de bayas"
+  },
+  "page-404": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2000
+    ],
+    [
+     2400,
+     2999
+    ]
+   ],
+   "focus": "55% 36%",
+   "alt_en": "Reading glasses left on a wooden table beside an open book",
+   "alt_es": "Unas gafas de lectura sobre una mesa de madera, junto a un libro abierto"
+  },
+  "step-consult": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2001
+    ]
+   ],
+   "focus": "50% 45%",
+   "alt_en": "An older man's hands typing on a laptop on his lap at home",
+   "alt_es": "Las manos de un hombre mayor escribiendo en un portátil sobre su regazo, en casa"
+  },
+  "step-labs": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2000
+    ],
+    [
+     2400,
+     2999
+    ]
+   ],
+   "focus": "50% 50%",
+   "alt_en": "A gloved hand holding two blood sample tubes against a warm beige wall",
+   "alt_es": "Una mano con guante sosteniendo dos tubos de muestras de sangre ante una pared beige cálida"
+  },
+  "step-plan": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2001
+    ]
+   ],
+   "focus": "50% 50%",
+   "alt_en": "A clinician in a white coat writing notes beside a laptop, seen from above",
+   "alt_es": "Un profesional sanitario con bata blanca tomando notas junto a un portátil, visto desde arriba"
+  },
+  "step-delivery": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2001
+    ]
+   ],
+   "focus": "50% 45%",
+   "alt_en": "Hands passing a plain padded parcel across a front doorstep",
+   "alt_es": "Unas manos entregando un paquete acolchado sin marcas en la puerta de casa"
+  },
+  "step-followup": {
+   "files": [
+    [
+     640,
+     800
+    ],
+    [
+     960,
+     1200
+    ],
+    [
+     1280,
+     1600
+    ],
+    [
+     1600,
+     2001
+    ]
+   ],
+   "focus": "50% 52%",
+   "alt_en": "Hands holding a phone, reading a message",
+   "alt_es": "Unas manos sosteniendo un teléfono, leyendo un mensaje"
+  }
+ },
+ "products": {
+  "cellular-recharge-injection": {
+   "files": [
+    [
+     480,
+     600
+    ],
+    [
+     800,
+     1000
+    ],
+    [
+     1200,
+     1500
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "photo": true,
+   "src": "products/pexels-16697019.jpg",
+   "variant": "vial-hand"
+  },
+  "cellular-recharge-liposomal": {
+   "files": [
+    [
+     480,
+     600
+    ],
+    [
+     800,
+     1000
+    ],
+    [
+     1200,
+     1500
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "photo": true,
+   "src": "products/unsplash-MkuwnDkT1s0.jpg",
+   "variant": "dropper-blank"
+  },
+  "cellular-recharge-nasal-spray": {
+   "files": [
+    [
+     480,
+     600
+    ],
+    [
+     800,
+     1000
+    ],
+    [
+     1200,
+     1500
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "photo": true,
+   "src": "products/unsplash-REYb3IaZjj4.jpg",
+   "variant": "nasal"
+  },
+  "daily-boost-pill": {
+   "files": [
+    [
+     480,
+     600
+    ],
+    [
+     800,
+     1000
+    ],
+    [
+     1200,
+     1500
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "photo": true,
+   "src": "products/pexels-13779113.jpg",
+   "variant": "tablet-white"
+  },
+  "double-powered-liposomal": {
+   "files": [
+    [
+     480,
+     600
+    ],
+    [
+     800,
+     1000
+    ],
+    [
+     1200,
+     1500
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "photo": true,
+   "src": "products/unsplash-Yt-PlvbOGGs.jpg",
+   "variant": "lipo-stone"
+  },
+  "double-powered-pill": {
+   "files": [
+    [
+     480,
+     600
+    ],
+    [
+     800,
+     1000
+    ],
+    [
+     1200,
+     1500
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "photo": true,
+   "src": "products/unsplash-78MSOwXof1M.jpg",
+   "variant": "tablet-amber"
+  },
+  "estradiol-cream-progesterone": {
+   "files": [
+    [
+     480,
+     600
+    ],
+    [
+     800,
+     1000
+    ],
+    [
+     1200,
+     1500
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "photo": true,
+   "src": "products/unsplash-4uN0JxJGRQE.jpg",
+   "variant": "cream-tube"
+  },
+  "estradiol-patch-progesterone": {
+   "files": [
+    [
+     480,
+     600
+    ],
+    [
+     800,
+     1000
+    ],
+    [
+     1200,
+     1500
+    ]
+   ],
+   "photo": true,
+   "src": "client-site/products (cut-out on built ground)",
+   "variant": "patch-still-interim"
+  },
+  "estradiol-tablet": {
+   "files": [
+    [
+     480,
+     600
+    ],
+    [
+     800,
+     1000
+    ],
+    [
+     1200,
+     1500
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "photo": true,
+   "src": "products/pexels-13779104.jpg",
+   "variant": "tablet-white-water"
+  },
+  "metabolism-boost-injection": {
+   "files": [
+    [
+     480,
+     600
+    ],
+    [
+     800,
+     1000
+    ],
+    [
+     1200,
+     1500
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "photo": true,
+   "src": "products/pexels-5922104.jpg",
+   "variant": "vial-syringe-pair"
+  },
+  "oral-paroxetine": {
+   "files": [
+    [
+     480,
+     600
+    ],
+    [
+     800,
+     1000
+    ],
+    [
+     1200,
+     1500
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "photo": true,
+   "src": "products/pexels-4492114.jpg",
+   "variant": "tablet-white-far"
+  },
+  "oral-semaglutide": {
+   "files": [
+    [
+     480,
+     600
+    ],
+    [
+     800,
+     1000
+    ],
+    [
+     1200,
+     1500
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "photo": true,
+   "src": "products/pexels-13787561.jpg",
+   "variant": "tablet-clear-jar"
+  },
+  "peak-recovery-injection": {
+   "files": [
+    [
+     480,
+     600
+    ],
+    [
+     800,
+     1000
+    ],
+    [
+     1200,
+     1500
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "photo": true,
+   "src": "products/pexels-5922088.jpg",
+   "variant": "vial-syringe-in"
+  },
+  "quadruple-powered-liposomal": {
+   "files": [
+    [
+     480,
+     600
+    ],
+    [
+     800,
+     1000
+    ],
+    [
+     1200,
+     1500
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "photo": true,
+   "src": "products/unsplash-8FAmgfTRLsA.jpg",
+   "variant": "lipo-drop"
+  },
+  "semaglutide-injections": {
+   "files": [
+    [
+     480,
+     600
+    ],
+    [
+     800,
+     1000
+    ],
+    [
+     1200,
+     1500
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "photo": true,
+   "src": "products/pexels-5922087.jpg",
+   "variant": "vial-single-tall"
+  },
+  "semaglutide-microdose-injection": {
+   "files": [
+    [
+     480,
+     600
+    ],
+    [
+     800,
+     1000
+    ],
+    [
+     1200,
+     1500
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "photo": true,
+   "src": "products/pexels-5922101.jpg",
+   "variant": "vial-row"
+  },
+  "tirzepatide-injections": {
+   "files": [
+    [
+     480,
+     600
+    ],
+    [
+     800,
+     1000
+    ],
+    [
+     1200,
+     1500
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "photo": true,
+   "src": "products/pexels-5922094.jpg",
+   "variant": "vial-syringe-lean"
+  },
+  "tirzepatide-microdose-injection": {
+   "files": [
+    [
+     480,
+     600
+    ],
+    [
+     800,
+     1000
+    ],
+    [
+     1200,
+     1500
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "photo": true,
+   "src": "products/unsplash-OAyRxahBf1o.jpg",
+   "variant": "vial-glass-light"
+  },
+  "triple-powered-liposomal": {
+   "files": [
+    [
+     480,
+     600
+    ],
+    [
+     800,
+     1000
+    ],
+    [
+     1200,
+     1500
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "photo": true,
+   "src": "products/pexels-8709583.jpg",
+   "variant": "lipo-plaster-palm"
+  },
+  "triple-powered-pill": {
+   "files": [
+    [
+     480,
+     600
+    ],
+    [
+     800,
+     1000
+    ],
+    [
+     1200,
+     1500
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "photo": true,
+   "src": "products/pexels-13779102.jpg",
+   "variant": "tablet-white-tipped"
+  },
+  "triple-powered-up-liposomal": {
+   "files": [
+    [
+     480,
+     600
+    ],
+    [
+     800,
+     1000
+    ],
+    [
+     1200,
+     1500
+    ],
+    [
+     1600,
+     2000
+    ]
+   ],
+   "photo": true,
+   "src": "products/unsplash-uKQ7SMHpG6s.jpg",
+   "variant": "lipo-close"
+  }
+ }
+}

@@ -1,0 +1,39 @@
+{% from "partials/macros.html" import photo_cell with context %}
+{#- About page (spec 2b, critic fix pass 10 Nov). Composed in the homepage's language, not as four text splits:
+    1. the split banner (photo half), the page's h1;
+    2. who we are: the homepage's intro() on cream, centred heading over its lead;
+    3. clinical standards: Sunspel's pairing on plum, a faceless photo (seen from behind) on 5 columns, the words on 7;
+    4. privacy: centred intro() again on cream, with its text link under the lead.
+    The full-bleed band-about photo is the same scene as the banner's, so it no longer shows here. The page source
+    sets T. The clinical team section is held until the client names real people. -#}
+<div class="t-about">
+
+{{ banner(T.title, T.line, 'about', kind='split') }}
+
+<!-- ===== About: who we are ===== -->
+<!-- CLIENT COPY REQUIRED: founder and partner names (placeholders stay visible for this round, Varun's note) -->
+<section class="o-band -light o-aboutBlock -centred" aria-labelledby="who-title" data-header-theme="light">
+  {{ intro('who-title', T.who_title, T.who_body, cls='-flush') }}
+</section>
+
+<!-- ===== About: clinical standards (photo and words, Sunspel) ===== -->
+<section class="o-band -plum o-aboutBlock -pair" aria-labelledby="standards-title">
+  {{ photo_cell('about-block', 'm-photoCell o-aboutBlock__photo', '(min-width: 1025px) 38vw, (min-width: 641px) 60vw, calc(100vw - 32px)') }}
+  <div class="o-aboutBlock__copy">
+    <h2 class="t-h2" id="standards-title" data-reveal>{{ T.std_title|hl }}</h2>
+    <p class="o-aboutBlock__text t-lead">{{ T.std_body }}</p>
+  </div>
+</section>
+
+<!-- ===== About: privacy ===== -->
+<!-- CLIENT COPY REQUIRED: HIPAA wording -->
+<section class="o-band -light o-aboutBlock -centred" aria-labelledby="privacy-title" data-header-theme="light">
+  {{ intro('privacy-title', T.priv_title, T.priv_body, cls='-flush') }}
+  <p class="o-aboutBlock__link">{{ text_link(T.priv_link, 'privacy.html') }}</p>
+</section>
+
+<!-- Clinical team: held until the client names real people (spec 2b). CLIENT COPY REQUIRED. -->
+
+{{ closing(photo='band-closing-info') }}
+
+</div>
