@@ -1382,8 +1382,8 @@
     ]
    ],
    "photo": true,
-   "src": "products/pexels-16697019.jpg",
-   "variant": "vial-hand"
+   "src": "products/pexels-6629376.jpg",
+   "variant": "syringe-gloved-hand"
   },
   "cellular-recharge-liposomal": {
    "files": [
@@ -1700,8 +1700,8 @@
     ]
    ],
    "photo": true,
-   "src": "products/pexels-5922087.jpg",
-   "variant": "vial-single-tall"
+   "src": "products/pexels-5922095.jpg",
+   "variant": "vial-syringe-upright"
   },
   "semaglutide-microdose-injection": {
    "files": [
@@ -1723,8 +1723,8 @@
     ]
    ],
    "photo": true,
-   "src": "products/pexels-5922101.jpg",
-   "variant": "vial-row"
+   "src": "products/pexels-5922099.jpg",
+   "variant": "vial-row-syringe"
   },
   "tirzepatide-injections": {
    "files": [
@@ -1769,8 +1769,8 @@
     ]
    ],
    "photo": true,
-   "src": "products/unsplash-OAyRxahBf1o.jpg",
-   "variant": "vial-glass-light"
+   "src": "products/pexels-4226909.jpg",
+   "variant": "syringe-close"
   },
   "triple-powered-liposomal": {
    "files": [
